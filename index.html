@@ -372,6 +372,9 @@ body{ background:var(--white); font-family:"IBM Plex Mono",ui-monospace,Menlo,mo
         transition:color .25s ease; }
 .agree a:hover{ color:var(--terra); }
 .f.err .f-label, .agree.err{ color:var(--terra); }
+.f-error{ position:absolute; left:0; bottom:.1rem; display:none; color:var(--terra);
+          font-family:"IBM Plex Sans",system-ui,sans-serif; font-size:.75rem; line-height:.875rem; }
+.f.err .f-error{ display:block; }
 .f.err .f-line::after{ transform:scaleX(1); }          
 .agree.err input{ border-color:var(--terra); }
 .pop-veil{ position:absolute; inset:0; z-index:7; background:color-mix(in srgb, var(--paper) 78%, transparent);
@@ -517,14 +520,14 @@ body{ background:var(--white); font-family:"IBM Plex Mono",ui-monospace,Menlo,mo
       <form class="form-grid" id="formGrid" data-endpoint="" novalidate>
         <input type="hidden" name="source" value="связаться">
         <input class="form-honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="f"><span class="f-label">имя</span><input type="text" name="name" aria-label="имя" data-need><span class="f-line"></span></div>
-        <div class="f"><span class="f-label">компания</span><input type="text" name="company" aria-label="компания"><span class="f-line"></span></div>
-        <div class="f"><span class="f-label">почта</span><input type="email" name="email" aria-label="почта" data-reach><span class="f-line"></span></div>
-        <div class="f"><span class="f-label">телефон</span><input type="tel" name="phone" aria-label="телефон" data-reach><span class="f-line"></span></div>
+        <div class="f"><span class="f-label">имя</span><input type="text" name="name" aria-label="имя" maxlength="120" data-need><span class="f-line"></span></div>
+        <div class="f"><span class="f-label">компания</span><input type="text" name="company" aria-label="компания" maxlength="120"><span class="f-line"></span></div>
+        <div class="f"><span class="f-label">почта</span><input type="email" name="email" aria-label="почта" aria-describedby="emailError" maxlength="254" autocomplete="email" data-reach><span class="f-error" id="emailError" role="status" aria-live="polite"></span><span class="f-line"></span></div>
+        <div class="f"><span class="f-label">телефон</span><input type="tel" name="phone" aria-label="телефон" aria-describedby="phoneError" maxlength="40" autocomplete="tel" inputmode="tel" data-reach><span class="f-error" id="phoneError" role="status" aria-live="polite"></span><span class="f-line"></span></div>
         <div class="f wide tall">
           <span class="f-label">задача</span>
           <label class="f-file" id="fileRow"><b>прикрепить файл</b><input type="file" name="file" id="fileInput"></label>
-          <textarea name="task" aria-label="задача" rows="3"></textarea>
+          <textarea name="task" aria-label="задача" rows="3" maxlength="4000"></textarea>
           <span class="f-line"></span>
         </div>
         <label class="agree"><input type="checkbox" name="agree">
@@ -548,9 +551,9 @@ body{ background:var(--white); font-family:"IBM Plex Mono",ui-monospace,Menlo,mo
       <form class="pop-grid" id="popForm" data-endpoint="" novalidate>
         <input type="hidden" name="source" value="кейсы">
         <input class="form-honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="f"><span class="f-label">имя</span><input type="text" name="name" aria-label="имя" data-need><span class="f-line"></span></div>
-        <div class="f"><span class="f-label">компания</span><input type="text" name="company" aria-label="компания"><span class="f-line"></span></div>
-        <div class="f wide"><span class="f-label">телефон или телеграм</span><input type="text" name="contact" aria-label="телефон или телеграм" data-need><span class="f-line"></span></div>
+        <div class="f"><span class="f-label">имя</span><input type="text" name="name" aria-label="имя" maxlength="120" data-need><span class="f-line"></span></div>
+        <div class="f"><span class="f-label">компания</span><input type="text" name="company" aria-label="компания" maxlength="120"><span class="f-line"></span></div>
+        <div class="f wide"><span class="f-label">телефон или телеграм</span><input type="text" name="contact" aria-label="телефон или телеграм" maxlength="254" data-need><span class="f-line"></span></div>
         <label class="agree"><input type="checkbox" name="agree">
           <span>Согласен на&nbsp;обработку персональных данных и&nbsp;принимаю <a href="politika.html" target="_blank">политику обработки</a></span></label>
         <button class="form-send" type="submit"><span>получить кейсы</span></button>
@@ -598,7 +601,8 @@ body{ background:var(--white); font-family:"IBM Plex Mono",ui-monospace,Menlo,mo
     <div class="scale" id="scale">M 1:1920</div>
   </div>
 </div>
-<script src="settings.js?v=20261012"></script>
+<script src="form-validation.js?v=20261012-validation"></script>
+<script src="settings.js?v=20261012-validation"></script>
 <script>
 { const C = Object.assign({ email: 'info@digitalm.agency' }, window.CONTACTS);
   document.querySelectorAll('[data-c]').forEach(a => {
@@ -981,18 +985,34 @@ function проверить(form){
   const mark = (el, bad) => { el.classList.toggle('err', bad); if (bad) ok = false; };
   form.querySelectorAll('[data-need]').forEach(i => mark(i.closest('.f'), !i.value.trim()));
   const reach = [...form.querySelectorAll('[data-reach]')];
-  if (reach.length){
-    const пусто = reach.every(i => !i.value.trim());
-    reach.forEach(i => mark(i.closest('.f'), пусто));
-  }
+  if (reach.length && !проверитьКонтакты(form, true)) ok = false;
   const agree = form.querySelector('input[name=agree]');
   mark(agree.closest('.agree'), !agree.checked);
   return ok;
 }
+function проверитьКонтакты(form, показатьПодсказку){
+  const email = form.querySelector('input[name=email]');
+  const phone = form.querySelector('input[name=phone]');
+  const validation = window.DigitalMFormValidation.validateContact(email?.value, phone?.value);
+  for (const input of [email, phone].filter(Boolean)){
+    const message = validation.errors[input.name] || '';
+    input.setCustomValidity(message);
+    input.setAttribute('aria-invalid', message ? 'true' : 'false');
+    const box = input.closest('.f');
+    box.classList.toggle('err', !!message);
+    const error = box.querySelector('.f-error');
+    if (error) error.textContent = message;
+  }
+  if (!validation.valid && показатьПодсказку){
+    const first = [email, phone].find(input => input && validation.errors[input.name]);
+    if (first) first.reportValidity();
+  }
+  return validation.valid;
+}
 document.querySelectorAll('#popForm, #formGrid').forEach(form => form.addEventListener('input', e => {
   const box = e.target.closest('.f, .agree'); if (!box) return;
+  if (e.target.hasAttribute('data-reach')) { проверитьКонтакты(form, false); return; }
   if (e.target.type === 'checkbox' ? e.target.checked : e.target.value.trim()) box.classList.remove('err');
-  if (e.target.hasAttribute('data-reach')) form.querySelectorAll('[data-reach]').forEach(i => i.closest('.f').classList.remove('err'));
 }));
 async function отправить(form){
   const url = form.dataset.endpoint || window.FORM_ENDPOINT || '';
