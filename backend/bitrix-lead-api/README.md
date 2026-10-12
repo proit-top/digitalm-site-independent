@@ -21,6 +21,22 @@ Node.js sidecar for the static `digitalm.agency` website. It creates CRM leads t
 4. **CRM leads:** stored in Bitrix, not on this server; the app has no local lead database or uploads to back up.
 5. **Pre-change rollback archive:** before production installation, save the exact existing Nginx site-settings snippets and record the archive path, timestamp, size, and checksum in the deployment report. This sidecar does not alter Bitrix files or its database.
 
+### Repeatable server snapshot
+
+Run as root on the DigitalM Bitrix host; the archive intentionally excludes `/etc/digitalm-lead-api/bitrix.env`:
+
+```sh
+BACKUP="/var/backups/digitalm-lead-api/installed-code-config-$(date -u +%Y%m%d-%H%M%S).tar.gz"
+tar -C / -czf "$BACKUP" \
+  opt/digitalm-lead-api \
+  etc/systemd/system/digitalm-lead-api.service \
+  etc/nginx/bx/site_settings/bitrix.digitalm.agency/lead-api.conf
+chmod 0600 "$BACKUP"
+tar -tzf "$BACKUP" >/dev/null && sha256sum "$BACKUP"
+```
+
+The code and deployment templates are also recoverable from the public GitHub repository. Restore code/config from a verified archive or repository, restore the webhook value separately from Vaultwarden into the root-only environment file, then run `systemd-analyze verify`, `nginx -t`, and read back both service states. Never include the environment file in a tar archive or Git commit.
+
 ## Install / restore
 
 Use root on the DigitalM production Bitrix host only after verifying the hostname and making the pre-change archive described above.
