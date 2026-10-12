@@ -21,6 +21,19 @@ Node.js sidecar for the static `digitalm.agency` website. It creates CRM leads t
 4. **CRM leads:** stored in Bitrix, not on this server; the app has no local lead database or uploads to back up.
 5. **Pre-change rollback archive:** before production installation, save the exact existing Nginx site-settings snippets and record the archive path, timestamp, size, and checksum in the deployment report. This sidecar does not alter Bitrix files or its database.
 
+## S3 backup (DigitalM production)
+
+The existing nightly S3 Restic job on `gdm` already snapshots the full Bitrix document root `/home/bitrix/ext_www/bitrix.digitalm.agency` and its SQL dump. Its repository locator is `s3:s3.twcstorage.ru/ac256a3a-gdm`; credentials and Restic password remain in the protected runtime configuration/Vaultwarden and are never printed here.
+
+The daily S3 job invokes `deploy/digitalm-custom-s3-backup.sh` for the Bitrix site. That helper refreshes a bare mirror of `proit-top/digitalm-site-independent` under `/root/backups/digitalm-site-independent.git` and adds a `digitalm-customization` Restic snapshot containing:
+
+- `/opt/digitalm-lead-api/` (application source, tests, and deployment templates);
+- `/etc/systemd/system/digitalm-lead-api.service` and its enabled symlink;
+- `/etc/nginx/bx/site_settings/bitrix.digitalm.agency/lead-api.conf`;
+- the bare Git mirror, including the static website and its history.
+
+`/etc/digitalm-lead-api/bitrix.env` is deliberately excluded. Restore the webhook separately from Vaultwarden into a root-owned `0600` file. The usual S3 run is scheduled daily at 00:00 server time; a manual full Bitrix run has significant I/O, so use an agreed quiet window.
+
 ### Repeatable server snapshot
 
 Run as root on the DigitalM Bitrix host; the archive intentionally excludes `/etc/digitalm-lead-api/bitrix.env`:
@@ -30,7 +43,10 @@ BACKUP="/var/backups/digitalm-lead-api/installed-code-config-$(date -u +%Y%m%d-%
 tar -C / -czf "$BACKUP" \
   opt/digitalm-lead-api \
   etc/systemd/system/digitalm-lead-api.service \
-  etc/nginx/bx/site_settings/bitrix.digitalm.agency/lead-api.conf
+  etc/systemd/system/multi-user.target.wants/digitalm-lead-api.service \
+  etc/nginx/bx/site_settings/bitrix.digitalm.agency/lead-api.conf \
+  root/scripts/digitalm-custom-s3-backup.sh \
+  root/backups/digitalm-site-independent.git
 chmod 0600 "$BACKUP"
 tar -tzf "$BACKUP" >/dev/null && sha256sum "$BACKUP"
 ```
