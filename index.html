@@ -359,6 +359,7 @@ body{ background:var(--white); font-family:"IBM Plex Mono",ui-monospace,Menlo,mo
             transition:color .25s ease; }
 .form-info a:hover{ color:var(--terra); }
 .form-info dd a + a{ margin-left:1.5rem; }
+.form-honeypot{ position:absolute!important; left:-10000px!important; top:auto!important; width:1px!important; height:1px!important; overflow:hidden!important; }
 .agree{ grid-column:1 / -1; position:relative; padding:1.5rem 0; display:flex; align-items:center; gap:.75rem;   
         cursor:pointer; font-family:"IBM Plex Sans",system-ui,sans-serif; font-size:1rem; line-height:1.5rem; }
 .agree input{ appearance:none; -webkit-appearance:none; flex:none; width:1.25rem; height:1.25rem; margin:0;
@@ -515,6 +516,7 @@ body{ background:var(--white); font-family:"IBM Plex Mono",ui-monospace,Menlo,mo
       <h2 class="form-head">Связаться с&nbsp;нами</h2>
       <form class="form-grid" id="formGrid" data-endpoint="" novalidate>
         <input type="hidden" name="source" value="связаться">
+        <input class="form-honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="f"><span class="f-label">имя</span><input type="text" name="name" aria-label="имя" data-need><span class="f-line"></span></div>
         <div class="f"><span class="f-label">компания</span><input type="text" name="company" aria-label="компания"><span class="f-line"></span></div>
         <div class="f"><span class="f-label">почта</span><input type="email" name="email" aria-label="почта" data-reach><span class="f-line"></span></div>
@@ -545,6 +547,7 @@ body{ background:var(--white); font-family:"IBM Plex Mono",ui-monospace,Menlo,mo
       <p class="pop-text ask">Оставьте контакты — свяжемся, покажем кейсы на встрече или&nbsp;пришлём&nbsp;подборку под вашу задачу.</p>   
       <form class="pop-grid" id="popForm" data-endpoint="" novalidate>
         <input type="hidden" name="source" value="кейсы">
+        <input class="form-honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="f"><span class="f-label">имя</span><input type="text" name="name" aria-label="имя" data-need><span class="f-line"></span></div>
         <div class="f"><span class="f-label">компания</span><input type="text" name="company" aria-label="компания"><span class="f-line"></span></div>
         <div class="f wide"><span class="f-label">телефон или телеграм</span><input type="text" name="contact" aria-label="телефон или телеграм" data-need><span class="f-line"></span></div>
@@ -993,7 +996,7 @@ document.querySelectorAll('#popForm, #formGrid').forEach(form => form.addEventLi
 }));
 async function отправить(form){
   const url = form.dataset.endpoint || window.FORM_ENDPOINT || '';
-  if (!url) { console.info('[форма — демо, не отправлено]', Object.fromEntries(new FormData(form))); return true; }
+  if (!url) { console.error('[форма] адрес обработчика не настроен; заявка не отправлена'); return false; }
   try { const r = await fetch(url, { method: 'POST', body: new FormData(form) }); return r.ok; }
   catch (e) { return false; }
 }

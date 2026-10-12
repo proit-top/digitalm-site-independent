@@ -1,0 +1,35 @@
+[Unit]
+Description=Digital M website lead relay to Bitrix CRM
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=digitalm-lead-api
+Group=digitalm-lead-api
+WorkingDirectory=/opt/digitalm-lead-api
+EnvironmentFile=/etc/digitalm-lead-api/bitrix.env
+Environment=PORT=9016
+ExecStart=/usr/bin/node /opt/digitalm-lead-api/src/server.mjs
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+LockPersonality=true
+RestrictSUIDSGID=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+CapabilityBoundingSet=
+AmbientCapabilities=
+MemoryMax=256M
+TasksMax=32
+LimitNOFILE=256
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
