@@ -582,6 +582,25 @@ html{ font-size: min(calc(100vw / 120), calc(100vh / 67.5)); }
 .r-budget-total{ position:absolute; left:var(--c4); top:45.5rem; }
 .r-budget-value{ margin:0; font-family:"Viaoda Libre",Georgia,serif; font-size:4rem; line-height:4.5rem; }
 .r-budget-source{ position:absolute; left:var(--c4); top:59.25rem; margin:0; font-size:.8125rem; line-height:1.5rem; color:var(--mark-dark); }
+.r-mp .r-head{ width:87rem; }
+.mp-toolbar{ position:absolute; left:var(--c4); top:15.5rem; width:87rem; display:flex; gap:2rem; align-items:center; }
+.mp-toolbar button{ appearance:none; background:none; border:0; border-bottom:1px solid var(--ash); color:var(--ink); padding:.5rem 0; cursor:pointer; text-decoration:none; font-family:"IBM Plex Mono",monospace; font-size:.875rem; line-height:1.5rem; }
+.mp-toolbar button[aria-pressed="true"]{ color:var(--terra); border-color:var(--terra); }
+.mp-toolbar button:focus-visible, .mp-scroll:focus-visible{ outline:1px solid var(--terra); outline-offset:.25rem; }
+.mp-scroll{ position:absolute; left:var(--c4); top:20rem; width:87rem; height:41rem; overflow:auto; overscroll-behavior:contain; }
+.mp-scroll .mp-table{ position:static; width:100%; table-layout:auto; font-size:.9375rem; line-height:1.375rem; }
+.mp-table [hidden]{ display:none!important; }
+.mp-table thead{ position:sticky; top:0; z-index:2; }
+.mp-table thead th{ font-size:.75rem; line-height:1.125rem; padding:.75rem .625rem; }
+.mp-table td{ padding:.625rem .5rem; min-width:5rem; }
+.mp-table td[data-col="D"]{ min-width:11rem; }
+.mp-table .mp-number{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.mp-table .mp-key{ position:sticky; left:0; z-index:1; min-width:12rem; background:var(--paper); box-shadow:1px 0 0 var(--ash); }
+.mp-table tbody tr:nth-child(even) .mp-key{ background:var(--g1); }
+.mp-table thead .mp-key{ background:var(--ink); z-index:3; }
+.mp-table .mp-group th{ padding:.625rem .5rem; color:var(--terra); background:var(--g1); font-family:"IBM Plex Mono",monospace; font-size:.75rem; line-height:1.25rem; }
+.mp-footer{ padding:1rem .5rem; font-family:"IBM Plex Sans",sans-serif; font-size:.9375rem; line-height:1.375rem; }
+.mp-footer p{ margin:0 0 .5rem; }
 .r-visual .r-head{ position:absolute; left:var(--c4); top:7.75rem; width:87rem; }
 .r-visual-grid{ position:absolute; left:var(--c4); top:19.25rem; width:87rem; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:3rem; }
 .r-visual-grid img{ display:block; width:100%; aspect-ratio:1; object-fit:contain; }
@@ -1030,16 +1049,16 @@ html{ font-size: calc(100vw / 22.5); }
 </style>
 <div class="sheet">
   <div class="window paper" id="win">
-    <section class="slide r-title on" data-kicker="salestech agency" data-num="01 / 62" data-title="Титул">
+    <section class="slide r-title on" data-kicker="salestech agency" data-num="01 / 63" data-title="Титул">
       <div class="r-logo" role="img" aria-label="РСТИ"><svg viewBox="25.6 15.5 67.8 67.8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M59.5,18.7c-16.9,0-30.7,13.8-30.7,30.7s13.8,30.7,30.7,30.7s30.7-13.8,30.7-30.7S76.4,18.7,59.5,18.7M59.5,83.3c-18.7,0-33.9-15.2-33.9-33.9s15.2-33.9,33.9-33.9s33.9,15.2,33.9,33.9S78.2,83.3,59.5,83.3" fill="currentColor"/><path d="M40.5,48.8h-2v-2.9h2c0.8,0,1.4,0.7,1.4,1.5C41.9,48.1,41.3,48.8,40.5,48.8 M40.8,42.9h-5.5v12.9h3.2v-4.1 h2.3c2.4,0,4.4-2,4.4-4.4S43.2,42.9,40.8,42.9" fill="currentColor"/><path d="M55.8,51.9c-0.7,0.8-1.6,1.2-2.7,1.2c-2,0-3.7-1.7-3.7-3.7c0-2.1,1.6-3.7,3.7-3.7c1.1,0,2.1,0.5,2.7,1.2l2.4-2.2c-1.3-1.4-3.1-2.3-5.1-2.3c-3.8,0-6.9,3.1-6.9,6.9c0,3.8,3.1,6.9,6.9,6.9c2,0,3.9-0.9,5.1-2.3L55.8,51.9z" fill="currentColor"/><polygon points="69.8,42.9 59.3,42.9 59.3,46 62.9,46 62.9,55.8 66.2,55.8 66.2,46 69.8,46" fill="currentColor"/><polygon points="81.9,42.9 74.8,50 74.8,42.9 71.6,42.9 71.6,55.8 73.3,55.8 80.6,48.7 80.6,55.8 83.8,55.8 83.8,42.9" fill="currentColor"/></svg></div>
       <h1 class="r-name">Стратегия продвижения ЖК&nbsp;«Кинопарк»</h1>
       <p class="r-lead">Рынок, аудитория, стратегия и&nbsp;медиатактика на&nbsp;октябрь&nbsp;—&nbsp;декабрь</p>
       <p class="r-date">Санкт-Петербург · 2026</p>
     </section>
-    <section class="slide r-hello" data-kicker="об агентстве" data-num="02 / 62" data-title="Привет">
+    <section class="slide r-hello" data-kicker="об агентстве" data-num="02 / 63" data-title="Привет">
       <p class="r-say">Привет! Мы Digital&nbsp;M.<br>Просто и&nbsp;быстро о&nbsp;том, кто мы и&nbsp;что умеем.</p>
     </section>
-    <section class="slide r-skills" data-kicker="об агентстве" data-num="03 / 62" data-title="Что умеем">
+    <section class="slide r-skills" data-kicker="об агентстве" data-num="03 / 63" data-title="Что умеем">
       <h2 class="r-head">Что умеем</h2>
       <div class="r-sk-rows">
         <div class="r-sk"><span class="r-n">01</span><h3>Brandformance</h3><ul><li>performance-маркетинг</li><li>медийная реклама</li><li>контекстная реклама</li></ul></div>
@@ -1047,7 +1066,7 @@ html{ font-size: calc(100vw / 22.5); }
         <div class="r-sk"><span class="r-n">03</span><h3>Promo</h3><ul><li>чековые промо под ключ</li><li>креативные идеи</li><li>механики и&nbsp;промо-сайты</li><li>размещение и&nbsp;модерация</li></ul></div>
       </div>
     </section>
-    <section class="slide r-prod" data-kicker="об агентстве" data-num="04 / 62" data-title="Продукты">
+    <section class="slide r-prod" data-kicker="об агентстве" data-num="04 / 63" data-title="Продукты">
       <h2 class="r-head">Продукты</h2>
       <div class="r-pf" role="img" aria-label="Digital M: М Платформа, М Дашборд, М Ресерч">
         <div class="r-pf-row r-pf-top"><svg class="r-pf-w" style="--x:0;--y:0;--w:2512;--h:1568" viewBox="0 0 2512 1568" fill="#211E1B" aria-hidden="true"><path d="M259.13 1103.9Q276.46 1103.9 286.04 1094.32Q295.62 1084.74 295.62 1066.5V500.97Q295.62 482.73 286.04 473.15Q276.46 463.58 259.13 463.58Q244.54 463.58 227.21 469.05V446.24H509.06Q587.5 446.24 653.63 486.38Q719.76 526.51 758.07 599.48Q796.38 672.46 796.38 765.49Q796.38 859.44 757.61 941.54Q718.85 1023.63 652.72 1072.43Q586.59 1121.23 509.06 1121.23H227.21V1098.42Q244.54 1103.9 259.13 1103.9ZM724.32 780.09Q724.32 695.26 691.94 621.83Q659.56 548.4 605.29 504.62Q551.01 460.84 488.99 460.84H406.9Q390.48 460.84 377.25 470.42Q364.03 479.99 364.03 500.97V1066.5Q364.03 1087.48 377.25 1096.6Q390.48 1105.72 406.9 1105.72H488.99Q540.98 1105.72 595.25 1071.06Q649.53 1036.4 686.92 962.97Q724.32 889.54 724.32 780.09Z"/><path d="M860.09 1109.7Q874.33 1109.71 878.23 1099.98Q882.3 1089.8 882.3 1069.27V775.64Q870.29 779.4 856.78 779.4Q850.91 779.4 839.24 777.74L838.38 777.61V753.37H847.84V754.37Q847.84 759.64 853.61 763.48Q859.57 767.46 867.55 767.46Q878.74 767.46 887.56 758.64Q896.62 749.58 909.82 730.6L910.12 730.17H935.68V1069.27Q935.68 1090.64 939.34 1100.41Q942.83 1109.71 955.39 1109.7Q961.88 1109.7 975.83 1105.6L977.11 1105.22V1119.99H838.38V1105.22L839.66 1105.6Q853.61 1109.71 860.09 1109.7ZM876.5 645.82Q876.5 631.29 886.76 621.88Q897 612.5 912.3 612.5Q927.61 612.5 938.25 622.29Q948.93 632.12 948.93 645.82Q948.93 660.34 938.67 669.76Q928.43 679.13 912.3 679.13Q897 679.13 886.76 669.76Q876.5 660.34 876.5 645.82Z"/><path d="M1269.78 746.85Q1290.93 765.89 1301.61 793.79Q1312.45 822.14 1312.45 853.81Q1312.45 915.51 1278.64 953.92Q1244.78 992.38 1173.89 992.38Q1117.51 992.38 1082.5 964.3Q1065.09 969.21 1057.93 983.13Q1050.58 997.42 1050.58 1011.26Q1050.58 1030.56 1068.09 1040.22Q1085.89 1050.04 1121.68 1050.04L1211.19 1051.7Q1282.05 1052.52 1317.56 1090.55Q1353.05 1128.54 1353.05 1180.31Q1353.05 1221.2 1330.53 1257.49Q1308.02 1293.76 1267.18 1316.26Q1226.36 1338.76 1173.89 1338.76Q1129.75 1338.76 1092.68 1322.1Q1055.57 1305.43 1034.29 1277.46Q1012.95 1249.43 1012.95 1215.95Q1012.95 1192.48 1025.51 1170.29Q1038.08 1148.09 1065.26 1133.03Q1092.41 1117.99 1134.11 1117.99H1135.11V1126.62H1134.11Q1093.25 1126.62 1079.45 1150.16Q1065.5 1173.96 1065.5 1215.95Q1065.5 1260.32 1092.6 1291.11Q1119.64 1321.85 1173.89 1321.85Q1232.28 1321.84 1264.71 1286.13Q1297.19 1250.36 1297.19 1186.11Q1297.19 1090.99 1132.45 1090.99Q1023.73 1090.98 1023.72 1031.15Q1023.72 1009.34 1036.7 986.73Q1049.36 964.69 1074.28 956.12Q1039.46 919.48 1039.47 853.81Q1039.47 795.45 1072.84 754.98Q1106.29 714.42 1173.89 714.42Q1225.91 714.43 1260.8 739.8Q1271.52 729.31 1286.58 722.39Q1302.11 715.25 1316.42 715.25Q1325.7 715.25 1330.02 716.97Q1342.68 721.2 1351.55 730.91Q1360.51 740.73 1360.51 751.89Q1360.51 760.5 1353.69 769.88L1353.68 769.89L1353.67 769.9Q1345.09 781.06 1337.96 781.06Q1331.65 781.06 1327.21 774.84Q1323.02 768.98 1317.18 757.31L1317.18 757.29L1317.17 757.28Q1311.4 744.92 1307.3 738.77Q1303.4 732.93 1298.05 732.16L1297.99 732.15L1297.93 732.14Q1286.33 729.04 1269.78 746.85ZM1252.44 853.81Q1252.44 797.71 1234.32 761.87Q1216.36 726.37 1173.89 726.37Q1132.25 726.37 1115.12 761.85Q1097.82 797.7 1097.82 853.81Q1097.82 913.25 1114.7 947.01Q1131.41 980.43 1173.89 980.43Q1217.2 980.43 1234.74 946.99Q1252.44 913.23 1252.44 853.81Z"/><path d="M1411.98 1109.7Q1426.22 1109.71 1430.12 1099.98Q1434.19 1089.79 1434.19 1069.27V775.64Q1422.18 779.4 1408.67 779.4Q1402.8 779.4 1391.13 777.74L1390.27 777.61V753.37H1399.73V754.37Q1399.73 759.64 1405.49 763.48Q1411.46 767.46 1419.44 767.46Q1430.63 767.46 1439.45 758.64Q1448.51 749.58 1461.71 730.6L1462.01 730.17H1487.57V1069.27Q1487.56 1090.63 1491.23 1100.41Q1494.72 1109.71 1507.28 1109.7Q1513.77 1109.71 1527.72 1105.6L1529 1105.22V1119.99H1390.27V1105.22L1391.55 1105.6Q1405.49 1109.71 1411.98 1109.7ZM1428.39 645.82Q1428.39 631.29 1438.65 621.88Q1448.89 612.5 1464.19 612.5Q1479.5 612.5 1490.14 622.29Q1500.82 632.12 1500.82 645.82Q1500.82 660.34 1490.56 669.76Q1480.32 679.13 1464.19 679.13Q1448.88 679.13 1438.65 669.76Q1428.39 660.34 1428.39 645.82Z"/><path d="M1609.22 1033.47V993.69V743.6H1554.53V729.17H1609.22V640.5H1610.22Q1627.12 640.5 1635.52 629.3Q1644.03 617.96 1644.02 605.87V604.87H1663.43L1662.6 729.17H1730.55V743.6H1662.59L1661.77 1034.3Q1661.77 1067.23 1667.9 1081.55Q1673.86 1095.45 1687.29 1095.45Q1703.35 1095.45 1713.82 1080.94Q1724.49 1066.17 1729.83 1047.69Q1735.18 1029.19 1735.18 1018.55V1017.55H1745.47V1018.55Q1745.46 1041.96 1734.61 1067.42Q1723.75 1092.91 1704.1 1110.04Q1684.35 1127.28 1658.28 1127.28Q1626.93 1127.28 1617.98 1103.01Q1609.22 1079.22 1609.22 1033.47Z"/><path d="M1780.83 1016.06Q1780.83 977.55 1806.79 950.32Q1832.66 923.21 1863.56 913.19Q1879.36 908.2 1900.53 903.63L1929.12 897.41Q1970.5 889.14 1991.16 882.11Q2011.28 875.27 2015.34 863.42Q2015.31 804.14 1992.69 764.64Q1970.19 725.37 1917.73 725.37Q1885.11 725.37 1869.25 748.55Q1853.27 771.91 1853.26 811.38Q1853.27 821.77 1857.15 826.04Q1860.99 830.27 1875.47 830.27Q1884.3 830.27 1890.68 826.28Q1896.84 822.43 1896.84 817.18V816.18H1906.3V840.56H1795.74V839.56Q1795.74 809.45 1813.28 779.8Q1830.82 750.16 1861.69 731.39Q1892.59 712.6 1930.16 712.6Q1980.22 712.59 2010.73 735.59Q2041.2 758.54 2054.15 790.7Q2067.06 822.78 2067.06 854.47V1034.3Q2067.07 1095.45 2092.58 1095.45Q2100.32 1095.45 2107.07 1084.73Q2113.96 1073.78 2113.96 1062.47V1061.47H2124.24V1062.47Q2124.25 1093.58 2105.26 1110.45Q2086.34 1127.28 2061.92 1127.28Q2033.04 1127.28 2024.1 1101.75Q2015.34 1076.73 2015.34 1031.81V1007.3Q2012.6 1019.16 2006.1 1037.94Q1994.84 1070.48 1966.5 1098.81Q1938.04 1127.28 1891.21 1127.28Q1844.41 1127.28 1812.64 1098.43Q1780.83 1069.54 1780.83 1016.06ZM2013.69 976.29V884.75Q2011.44 886.32 2006.69 887.75Q1998.36 890.24 1985.91 892.74Q1932.09 906.81 1907.3 915.9Q1868.64 929.89 1850.59 954.91Q1832.55 979.93 1832.55 1011.09Q1832.55 1047.23 1852.66 1074.72Q1872.66 1102.08 1910.27 1102.08Q1938.05 1102.08 1961.8 1079.97Q1985.68 1057.73 1999.69 1027.25Q2013.69 996.79 2013.69 976.29Z"/><path d="M2169.67 1109.86Q2184.07 1109.86 2188 1100.02Q2192.12 1089.73 2192.12 1068.98V496.64Q2184.06 498.82 2173.85 498.82Q2162.04 498.82 2148.55 496.29L2147.73 496.14V471.7H2157.27V472.7Q2157.27 477.12 2165.52 481.44Q2174.1 485.93 2182.23 485.93Q2201.16 485.93 2215.14 475.66Q2228.96 465.49 2228.97 449.25V448.25H2246.88L2246.04 1068.99Q2246.04 1090.58 2249.74 1100.46Q2253.27 1109.86 2265.98 1109.86Q2272.54 1109.86 2286.63 1105.71L2287.91 1105.33V1120.23H2147.73V1105.33L2149.01 1105.71Q2163.11 1109.86 2169.67 1109.86Z"/></svg><svg class="r-pf-m" style="--y:0" viewBox="2610 224 1064 1120" aria-hidden="true"><path d="M3674 224H2610V1344H3674V224Z" fill="#E0622C"/><path d="M2834 448L3142 946.355L3065.06 1070.94L2988.04 946.355V1120H2834V448Z" fill="#211E1B"/><path d="M3450 448L3142 946.355L3219 1070.94L3295.99 946.355V1120H3450V448Z" fill="#211E1B"/></svg></div>
@@ -1059,7 +1078,7 @@ html{ font-size: calc(100vw / 22.5); }
       <p class="r-pf-p" style="--k:2">Интерактивный отчёт о&nbsp;результатах рекламной кампании. Обновляется раз в&nbsp;сутки.</p>
       <p class="r-pf-p" style="--k:3">Аналитика баннеров с&nbsp;помощью ИИ. Аудит рекламных кампаний по&nbsp;всей воронке продаж.</p>
     </section>
-    <section class="slide r-team" data-kicker="об агентстве" data-num="05 / 62" data-title="Команда">
+    <section class="slide r-team" data-kicker="об агентстве" data-num="05 / 63" data-title="Команда">
       <h2 class="r-head">Команда</h2>
       <div class="r-tm-row">
         <figure class="r-tm"><img src="rsti/img/team-1.jpg" alt=""><figcaption><span>CEO</span><b>Марина<br>Зрилова</b><em>опыт 15 лет</em></figcaption></figure>
@@ -1076,7 +1095,7 @@ html{ font-size: calc(100vw / 22.5); }
         <li><b>Марк Лазарев</b><span>специалист по&nbsp;фидам</span><em>опыт 3 года</em></li>
       </ul>
     </section>
-    <section class="slide r-logos" data-kicker="об агентстве" data-num="06 / 62" data-title="Опыт в недвижимости">
+    <section class="slide r-logos" data-kicker="об агентстве" data-num="06 / 63" data-title="Опыт в недвижимости">
       <h2 class="r-head">Опыт команды в&nbsp;недвижимости</h2>
       <div class="r-lo-cols">
         <div class="r-lo-col"><p class="r-k">Москва и&nbsp;МО</p><div class="r-lo-grid" style="--c:2"><img src="rsti/img/logo-bark/6-msk-01.png" style="--r:1.68" alt=""><img src="rsti/img/logo-bark/6-msk-02.png" style="--r:5.53" alt=""><img src="rsti/img/logo-bark/6-msk-03.png" style="--r:7.50" alt=""><img src="rsti/img/logo-bark/6-msk-04.png" style="--r:1.01" alt=""><img src="rsti/img/logo-bark/6-msk-05.png" style="--r:2.46" alt=""><img src="rsti/img/logo-bark/6-msk-06.png" style="--r:4.25" alt=""><img src="rsti/img/logo-bark/6-msk-07.png" style="--r:2.12" alt=""><img src="rsti/img/logo-bark/6-msk-08.png" style="--r:1.75" alt=""></div></div>
@@ -1084,7 +1103,7 @@ html{ font-size: calc(100vw / 22.5); }
         <div class="r-lo-col"><p class="r-k">Регионы</p><div class="r-lo-grid" style="--c:2"><img src="rsti/img/logo-bark/6-reg-01.png" style="--r:5.53" alt=""><img src="rsti/img/logo-bark/6-reg-02.png" style="--r:4.31" alt=""><img src="rsti/img/logo-bark/6-reg-03.png" style="--r:1.75" alt=""><img src="rsti/img/logo-bark/6-reg-04.png" style="--r:3.68" alt=""><img src="rsti/img/logo-bark/6-reg-05.png" style="--r:9.38" alt=""><img src="rsti/img/logo-bark/6-reg-06.png" style="--r:0.79" alt=""></div></div>
       </div>
     </section>
-    <section class="slide r-logos r-logos-cls" data-kicker="об агентстве" data-num="07 / 62" data-title="Опыт по классам">
+    <section class="slide r-logos r-logos-cls" data-kicker="об агентстве" data-num="07 / 63" data-title="Опыт по классам">
       <h2 class="r-head">Опыт работы команды</h2>
       <div class="r-lo-cols">
         <div class="r-lo-col"><p class="r-k">Премиум</p><div class="r-lo-subs" style="--s:2"><div class="r-lo-sub"><div class="r-lo-g"><img src="rsti/img/logo-bark/7-prem-02.png" style="--r:2.18" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-prem-03.png" style="--r:4.40" alt=""><img src="rsti/img/logo-bark/7-prem-05.png" style="--r:4.38" alt=""></div></div><div class="r-lo-g"><img src="rsti/img/logo-bark/7-prem-07.png" style="--r:5.53" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-prem-09.png" style="--r:8.16" alt=""><img src="rsti/img/logo-bark/7-prem-10.png" style="--r:4.35" alt=""></div></div><div class="r-lo-g"><img src="rsti/img/logo-bark/7-prem-12.png" style="--r:2.46" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-prem-14.png" style="--r:4.94" alt=""></div></div><div class="r-lo-g"><img src="rsti/img/logo-bark/7-prem-15.png" style="--r:1.75" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-prem-17.png" style="--r:4.42" alt=""></div></div></div><div class="r-lo-sub"><div class="r-lo-g"><img src="rsti/img/logo-bark/7-prem-01.png" style="--r:1.00" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-prem-04.png" style="--r:3.12" alt=""></div></div><div class="r-lo-g"><img src="rsti/img/logo-bark/7-prem-06.png" style="--r:0.52" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-prem-08.png" style="--r:1.54" alt=""></div></div><div class="r-lo-g"><img src="rsti/img/logo-bark/7-prem-11.png" style="--r:1.56" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-prem-13.png" style="--r:1.56" alt=""></div></div><div class="r-lo-g"><img src="rsti/img/logo-bark/7-prem-tera.png" style="--r:1.66" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-prem-papushevo.png" style="--r:3.15" alt=""><img src="rsti/img/logo-bark/7-prem-monavie.png" style="--r:3.07" alt=""></div></div></div></div></div>
@@ -1092,7 +1111,7 @@ html{ font-size: calc(100vw / 22.5); }
         <div class="r-lo-col"><p class="r-k">Комфорт</p><div class="r-lo-subs" style="--s:3"><div class="r-lo-sub"><div class="r-lo-g"><img src="rsti/img/logo-bark/7-comf-02.png" style="--r:1.12" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-comf-04.png" style="--r:1.49" alt=""><img src="rsti/img/logo-bark/7-comf-08.png" style="--r:1.35" alt=""><img src="rsti/img/logo-bark/7-comf-11.png" style="--r:1.43" alt=""></div></div><div class="r-lo-g"><img src="rsti/img/logo-bark/7-comf-12.png" style="--r:3.59" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-comf-15.png" style="--r:4.28" alt=""><img src="rsti/img/logo-bark/7-comf-18.png" style="--r:4.78" alt=""><img src="rsti/img/logo-bark/7-comf-20.png" style="--r:3.76" alt=""><img src="rsti/img/logo-bark/7-comf-23.png" style="--r:9.50" alt=""><img src="rsti/img/logo-bark/7-comf-25.png" style="--r:3.85" alt=""></div></div></div><div class="r-lo-sub"><div class="r-lo-g"><img src="rsti/img/logo-bark/7-comf-01.png" style="--r:3.51" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-comf-05.png" style="--r:1.33" alt=""><img src="rsti/img/logo-bark/7-comf-06.png" style="--r:6.40" alt=""><img src="rsti/img/logo-bark/7-comf-10.png" style="--r:1.32" alt=""></div></div><div class="r-lo-g"><img src="rsti/img/logo-bark/7-comf-13.png" style="--r:5.88" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-comf-16.png" style="--r:2.37" alt=""><img src="rsti/img/logo-bark/7-comf-19.png" style="--r:4.32" alt=""><img src="rsti/img/logo-bark/7-comf-21.png" style="--r:3.83" alt=""></div></div></div><div class="r-lo-sub"><div class="r-lo-g"><img src="rsti/img/logo-bark/7-comf-03.png" style="--r:5.53" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-comf-07.png" style="--r:9.95" alt=""><img src="rsti/img/logo-bark/7-comf-09.png" style="--r:7.37" alt=""></div></div><div class="r-lo-g"><img src="rsti/img/logo-bark/7-comf-14.png" style="--r:0.53" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-comf-17.png" style="--r:2.96" alt=""></div></div><div class="r-lo-g"><img src="rsti/img/logo-bark/7-comf-22.png" style="--r:5.47" alt=""><div class="r-lo-grid" style="--c:1"><img src="rsti/img/logo-bark/7-comf-24.png" style="--r:2.94" alt=""></div></div></div></div></div>
       </div>
     </section>
-    <section class="slide r-letters" data-kicker="об агентстве" data-num="08 / 62" data-title="Благодарственные письма">
+    <section class="slide r-letters" data-kicker="об агентстве" data-num="08 / 63" data-title="Благодарственные письма">
       <h2 class="r-head">Благодарственные письма</h2>
       <div class="r-lt-row">
         <figure><a href="rsti/img/letter-full-1.jpg" target="_blank"><img src="rsti/img/letter-full-1.jpg" alt=""></a></figure>
@@ -1102,18 +1121,18 @@ html{ font-size: calc(100vw / 22.5); }
         <figure><a href="rsti/img/letter-full-5.jpg" target="_blank"><img src="rsti/img/letter-full-5.jpg" alt=""></a></figure>
       </div>
     </section>
-    <section class="slide r-toc" data-kicker="об агентстве" data-num="09 / 62" data-title="Содержание">
+    <section class="slide r-toc" data-kicker="об агентстве" data-num="09 / 63" data-title="Содержание">
       <h2 class="r-head">Содержание</h2>
       <ol class="r-toc-list">
         <li data-sec="01"><span class="r-n">01</span><b>Рынок и&nbsp;конкуренты</b><i>11–16</i></li>
         <li data-sec="02"><span class="r-n">02</span><b>Аудитория</b><i>17–32</i></li>
         <li data-sec="03"><span class="r-n">03</span><b>Стратегия</b><i>33–40</i></li>
-        <li data-sec="04"><span class="r-n">04</span><b>Медиаплан и&nbsp;бюджет</b><i>41–45</i></li>
-        <li data-sec="05"><span class="r-n">05</span><b>Отчётность</b><i>46–49</i></li>
-        <li data-sec="06"><span class="r-n">06</span><b>Кейсы</b><i>50–62</i></li>
+        <li data-sec="04"><span class="r-n">04</span><b>Медиаплан и&nbsp;бюджет</b><i>41–46</i></li>
+        <li data-sec="05"><span class="r-n">05</span><b>Отчётность</b><i>47–50</i></li>
+        <li data-sec="06"><span class="r-n">06</span><b>Кейсы</b><i>51–63</i></li>
       </ol>
     </section>
-    <section class="slide r-brief" data-kicker="бриф" data-num="10 / 62" data-title="Бриф">
+    <section class="slide r-brief" data-kicker="бриф" data-num="10 / 63" data-title="Бриф">
       <h2 class="r-head">Бриф</h2>
       <div class="r-brief-text">
         <p class="r-k">о проекте</p>
@@ -1129,13 +1148,13 @@ html{ font-size: calc(100vw / 22.5); }
         <div><dt>до&nbsp;35&#8239;000</dt><dd>руб. CPA с&nbsp;НДС</dd></div>
       </dl>
     </section>
-    <section class="slide r-div" data-kicker="01 · рынок и конкуренты" data-num="11 / 62" data-sec="01" data-menu="РЫНОК И КОНКУРЕНТЫ" data-title="Рынок и конкуренты · обложка">
+    <section class="slide r-div" data-kicker="01 · рынок и конкуренты" data-num="11 / 63" data-sec="01" data-menu="РЫНОК И КОНКУРЕНТЫ" data-title="Рынок и конкуренты · обложка">
       <figure class="r-div-bg"><img src="rsti/img/kp-aerial.jpg" alt="ЖК «Кинопарк» с высоты"></figure>
       <p class="r-num">01</p>
       <h2 class="r-div-t">Рынок и&nbsp;конкуренты</h2>
       <p class="r-div-s">Спрос, цены и&nbsp;активность пяти соседних проектов</p>
     </section>
-    <section class="slide r-sw" data-kicker="01 · рынок и конкуренты" data-num="12 / 62" data-title="Юго-Запад Петербурга">
+    <section class="slide r-sw" data-kicker="01 · рынок и конкуренты" data-num="12 / 63" data-title="Юго-Запад Петербурга">
       <h2 class="r-head">Юго-Запад Санкт-Петербурга</h2>
       <div class="r-sw-text">
         <p class="r-k">динамика продаж</p>
@@ -1152,7 +1171,7 @@ html{ font-size: calc(100vw / 22.5); }
       </dl>
       <p class="s-note r-src">источники: «Деловой Петербург» (dp.ru), базы и&nbsp;ценовые индексы Restate.ru и&nbsp;«Циан»</p>
     </section>
-    <section class="slide r-wide" data-kicker="01 · рынок и конкуренты" data-num="13 / 62" data-title="Конкуренты">
+    <section class="slide r-wide" data-kicker="01 · рынок и конкуренты" data-num="13 / 63" data-title="Конкуренты">
       <h2 class="r-head">Конкуренты ЖК&nbsp;«Кинопарк»</h2>
       <p class="r-head-s">Девять проектов комфорт-класса рядом: цены, отделка, сроки сдачи</p>
       <table class="r-table r-t9">
@@ -1172,7 +1191,7 @@ html{ font-size: calc(100vw / 22.5); }
         </tbody>
       </table>
     </section>
-    <section class="slide r-wide" data-kicker="01 · рынок и конкуренты" data-num="14 / 62" data-title="Продажи за 2026 год">
+    <section class="slide r-wide" data-kicker="01 · рынок и конкуренты" data-num="14 / 63" data-title="Продажи за 2026 год">
       <h2 class="r-head">Продажи за&nbsp;2026&nbsp;год</h2>
       <p class="r-head-s">Январь&nbsp;— август, по&nbsp;месяцам</p>
       <table class="r-table r-t5">
@@ -1190,7 +1209,7 @@ html{ font-size: calc(100vw / 22.5); }
         </tbody>
       </table>
     </section>
-    <section class="slide r-chart" data-kicker="01 · рынок и конкуренты" data-num="15 / 62" data-title="Продажи конкурентов">
+    <section class="slide r-chart" data-kicker="01 · рынок и конкуренты" data-num="15 / 63" data-title="Продажи конкурентов">
       <h2 class="r-head">Продажи конкурентов</h2>
       <p class="r-head-s">Январь&nbsp;— август 2026, девять ЖК вместе с&nbsp;«Кинопарком»</p>
       <div class="r-text">
@@ -1201,7 +1220,7 @@ html{ font-size: calc(100vw / 22.5); }
       </div>
       <div class="r-plot" data-chart="rsti-sales"></div>
     </section>
-    <section class="slide r-chart" data-kicker="01 · рынок и конкуренты" data-num="16 / 62" data-title="Анализ ёмкости">
+    <section class="slide r-chart" data-kicker="01 · рынок и конкуренты" data-num="16 / 63" data-title="Анализ ёмкости">
       <h2 class="r-head">Анализ ёмкости</h2>
       <p class="r-head-s">Показатель спроса по&nbsp;ЖК</p>
       <div class="r-text">
@@ -1212,13 +1231,13 @@ html{ font-size: calc(100vw / 22.5); }
       </div>
       <div class="r-plot" data-chart="rsti-demand"></div>
     </section>
-    <section class="slide r-div" data-kicker="02 · аудитория" data-num="17 / 62" data-sec="02" data-menu="АУДИТОРИЯ" data-title="Аудитория · обложка">
+    <section class="slide r-div" data-kicker="02 · аудитория" data-num="17 / 63" data-sec="02" data-menu="АУДИТОРИЯ" data-title="Аудитория · обложка">
       <figure class="r-div-bg"><img src="rsti/img/kp-balcony.jpg" alt="Балкон с видом на двор"></figure>
       <p class="r-num">02</p>
       <h2 class="r-div-t">Аудитория</h2>
       <p class="r-div-s">Кто покупает ЖК&nbsp;«Кинопарк»</p>
     </section>
-    <section class="slide r-ca" data-kicker="02 · аудитория" data-num="18 / 62" data-title="Молодые семьи и холостые">
+    <section class="slide r-ca" data-kicker="02 · аудитория" data-num="18 / 63" data-title="Молодые семьи и холостые">
       <h2 class="r-head">Молодые семьи и&nbsp;холостые</h2>
       <div class="r-ca-text">
         <figure class="r-ca-photo"><img src="rsti/img/ca-molodye-semi.png" alt="Молодая пара дома"></figure>
@@ -1241,7 +1260,7 @@ html{ font-size: calc(100vw / 22.5); }
         </div>
       </div>
     </section>
-    <section class="slide r-day r-day-aud" data-kicker="02 · аудитория" data-num="19 / 62" data-title="День молодых семей и холостых" data-sleep="23-31">
+    <section class="slide r-day r-day-aud" data-kicker="02 · аудитория" data-num="19 / 63" data-title="День молодых семей и холостых" data-sleep="23-31">
       <h2 class="r-head">День молодых семей и&nbsp;холостых</h2>
       <p class="r-head-s">График внимания целевой аудитории</p>
       <div class="r-ring" aria-hidden="true"></div>
@@ -1249,12 +1268,12 @@ html{ font-size: calc(100vw / 22.5); }
         <li data-h="7-10" data-g="3"><span class="r-n">01</span><b>Утро</b><div class="r-ring-more"><p>Домашние дела, отвести ребёнка в&nbsp;сад/школу. Личные дела.</p></div></li>
         <li data-h="10-12" data-g="4"><span class="r-n">02</span><b>Работа и&nbsp;личные дела</b><div class="r-ring-more"><p>Работа / личное время / домашние дела.</p><ul><li>РСЯ по&nbsp;интересам и&nbsp;тесты / Бренд</li><li>базы недвижимости, ИИ-ассистент</li><li>VK, карты</li></ul></div></li>
         <li data-h="12-13" data-g="5"><span class="r-n">03</span><b>Обед</b><div class="r-ring-more"><p>Обед.</p></div></li>
-        <li data-h="14-18" data-g="6"><span class="r-n">04</span><b>Работа</b><div class="r-ring-more"><p>Работа / серфинг интернета / личные дела.</p><ul><li>MAX и&nbsp;ТГ-каналы, VK, РСЯ</li><li>карты, Яндекс Директ</li></ul></div></li>
+        <li data-h="13-18" data-g="6"><span class="r-n">04</span><b>Работа</b><div class="r-ring-more"><p>Работа / серфинг интернета / личные дела.</p><ul><li>MAX и&nbsp;ТГ-каналы, VK, РСЯ</li><li>карты, Яндекс Директ</li></ul></div></li>
         <li data-h="18-20" data-g="3"><span class="r-n">05</span><b>Домашние дела</b><div class="r-ring-more"><p>Домашние дела, забрать ребёнка из&nbsp;сада/школы.</p><ul><li>MAX и&nbsp;ТГ-каналы, VK, РСЯ</li><li>карты</li></ul></div></li>
         <li data-h="20-23" data-g="7"><span class="r-n">06</span><b>Личное время</b><div class="r-ring-more"><p>Личное время. Серфинг интернета.</p><ul><li>Яндекс Директ: РСЯ по&nbsp;интересам и&nbsp;тесты / Бренд</li><li>базы недвижимости, ИИ-ассистент</li><li>VK, карты</li></ul></div></li>
       </ol>
     </section>
-    <section class="slide r-visual" data-kicker="02 · аудитория" data-num="20 / 62" data-title="Визуалы — молодые семьи">
+    <section class="slide r-visual" data-kicker="02 · аудитория" data-num="20 / 63" data-title="Визуалы — молодые семьи">
       <h2 class="r-head">Визуалы для ЦА — молодые семьи</h2>
       <div class="r-visual-grid r-visual-three">
         <img src="rsti/img/audience-0911/slide-3-1.png" alt="Рекламный визуал для молодых семей 1">
@@ -1262,14 +1281,14 @@ html{ font-size: calc(100vw / 22.5); }
         <img src="rsti/img/audience-0911/slide-3-3.png" alt="Рекламный визуал для молодых семей 3">
       </div>
     </section>
-    <section class="slide r-visual" data-kicker="02 · аудитория" data-num="21 / 62" data-title="Визуалы — холостые">
+    <section class="slide r-visual" data-kicker="02 · аудитория" data-num="21 / 63" data-title="Визуалы — холостые">
       <h2 class="r-head">Визуалы для ЦА — холостые</h2>
       <div class="r-visual-grid">
         <img src="rsti/img/audience-0911/slide-4-1.png" alt="Рекламный визуал для холостых 1">
         <img src="rsti/img/audience-0911/slide-4-2.png" alt="Рекламный визуал для холостых 2">
       </div>
     </section>
-    <section class="slide r-ca" data-kicker="02 · аудитория" data-num="22 / 62" data-title="Семьи с детьми">
+    <section class="slide r-ca" data-kicker="02 · аудитория" data-num="22 / 63" data-title="Семьи с детьми">
       <h2 class="r-head">Семьи с&nbsp;детьми</h2>
       <div class="r-ca-text">
         <figure class="r-ca-photo"><img src="rsti/img/ca-semi-s-detmi.png" alt="Семья с ребёнком дома"></figure>
@@ -1292,7 +1311,7 @@ html{ font-size: calc(100vw / 22.5); }
         </div>
       </div>
     </section>
-    <section class="slide r-day r-day-aud" data-kicker="02 · аудитория" data-num="23 / 62" data-title="День семей с детьми" data-sleep="23-31">
+    <section class="slide r-day r-day-aud" data-kicker="02 · аудитория" data-num="23 / 63" data-title="День семей с детьми" data-sleep="23-31">
       <h2 class="r-head">День семей с&nbsp;детьми</h2>
       <p class="r-head-s">График внимания целевой аудитории</p>
       <div class="r-ring" aria-hidden="true"></div>
@@ -1300,19 +1319,19 @@ html{ font-size: calc(100vw / 22.5); }
         <li data-h="7-10" data-g="3"><span class="r-n">01</span><b>Утро</b><div class="r-ring-more"><p>Домашние дела, отвести ребёнка в&nbsp;сад/школу. Личные дела.</p></div></li>
         <li data-h="10-12" data-g="4"><span class="r-n">02</span><b>Работа и&nbsp;личные дела</b><div class="r-ring-more"><p>Работа / личное время / домашние дела.</p><ul><li>РСЯ по&nbsp;интересам и&nbsp;тесты / Бренд</li><li>базы недвижимости, ИИ-ассистент</li><li>VK, карты</li></ul></div></li>
         <li data-h="12-13" data-g="5"><span class="r-n">03</span><b>Обед</b><div class="r-ring-more"><p>Обед.</p></div></li>
-        <li data-h="14-18" data-g="6"><span class="r-n">04</span><b>Работа</b><div class="r-ring-more"><p>Работа / серфинг интернета / личные дела.</p><ul><li>MAX и&nbsp;ТГ-каналы, VK, РСЯ</li><li>карты, Яндекс Директ</li></ul></div></li>
+        <li data-h="13-18" data-g="6"><span class="r-n">04</span><b>Работа</b><div class="r-ring-more"><p>Работа / серфинг интернета / личные дела.</p><ul><li>MAX и&nbsp;ТГ-каналы, VK, РСЯ</li><li>карты, Яндекс Директ</li></ul></div></li>
         <li data-h="18-20" data-g="3"><span class="r-n">05</span><b>Домашние дела</b><div class="r-ring-more"><p>Домашние дела, забрать ребёнка из&nbsp;сада/школы.</p><ul><li>MAX и&nbsp;ТГ-каналы, VK, РСЯ</li><li>карты</li></ul></div></li>
         <li data-h="20-23" data-g="7"><span class="r-n">06</span><b>Личное время</b><div class="r-ring-more"><p>Личное время. Серфинг интернета.</p><ul><li>Яндекс Директ: РСЯ по&nbsp;интересам и&nbsp;тесты / Бренд</li><li>базы недвижимости, ИИ-ассистент</li><li>VK, карты</li></ul></div></li>
       </ol>
     </section>
-    <section class="slide r-visual" data-kicker="02 · аудитория" data-num="24 / 62" data-title="Визуалы — семьи с детьми">
+    <section class="slide r-visual" data-kicker="02 · аудитория" data-num="24 / 63" data-title="Визуалы — семьи с детьми">
       <h2 class="r-head">Визуалы для ЦА — семьи с детьми</h2>
       <div class="r-visual-grid">
         <img src="rsti/img/audience-0911/slide-6-1.png" alt="Рекламный визуал для семей с детьми 1">
         <img src="rsti/img/audience-0911/slide-6-2.png" alt="Рекламный визуал для семей с детьми 2">
       </div>
     </section>
-    <section class="slide r-ca r-ca-expanded" data-kicker="02 · аудитория" data-num="25 / 62" data-title="Зрелые пары с взрослыми детьми">
+    <section class="slide r-ca r-ca-expanded" data-kicker="02 · аудитория" data-num="25 / 63" data-title="Зрелые пары с взрослыми детьми">
       <h2 class="r-head">Зрелые пары с&nbsp;взрослыми детьми</h2>
       <div class="r-ca-text">
         <figure class="r-ca-photo"><img src="rsti/img/ca-zrelye-pary.png" alt="Пара старшего возраста дома"></figure>
@@ -1336,7 +1355,7 @@ html{ font-size: calc(100vw / 22.5); }
         </div>
       </div>
     </section>
-    <section class="slide r-day r-day-aud" data-kicker="02 · аудитория" data-num="26 / 62" data-title="День зрелых пар" data-sleep="23-32">
+    <section class="slide r-day r-day-aud" data-kicker="02 · аудитория" data-num="26 / 63" data-title="День зрелых пар" data-sleep="23-32">
       <h2 class="r-head">День зрелых пар</h2>
       <p class="r-head-s">График внимания целевой аудитории</p>
       <div class="r-ring" aria-hidden="true"></div>
@@ -1344,18 +1363,18 @@ html{ font-size: calc(100vw / 22.5); }
         <li data-h="8-10" data-g="3"><span class="r-n">01</span><b>Утро</b><div class="r-ring-more"><p>Дорога на&nbsp;работу или подготовка к&nbsp;работе дома / домашние дела.</p><ul><li>MAX и&nbsp;ТГ-каналы, VK, РСЯ</li><li>карты</li></ul></div></li>
         <li data-h="10-12" data-g="4"><span class="r-n">02</span><b>Работа</b><div class="r-ring-more"><p>Работа.</p></div></li>
         <li data-h="12-13" data-g="5"><span class="r-n">03</span><b>Обед</b><div class="r-ring-more"><p>Обед, личное время, гаджеты.</p><ul><li>VK, РСЯ</li></ul></div></li>
-        <li data-h="14-18" data-g="6"><span class="r-n">04</span><b>Работа</b><div class="r-ring-more"><p>Работа.</p></div></li>
+        <li data-h="13-18" data-g="6"><span class="r-n">04</span><b>Работа</b><div class="r-ring-more"><p>Работа.</p></div></li>
         <li data-h="18-20" data-g="3"><span class="r-n">05</span><b>Дорога домой</b><div class="r-ring-more"><p>Дорога домой / домашние дела.</p><ul><li>MAX и&nbsp;ТГ-каналы, VK, РСЯ</li><li>карты</li></ul></div></li>
         <li data-h="20-23" data-g="7"><span class="r-n">06</span><b>Личное время</b><div class="r-ring-more"><p>Личное время. Серфинг интернета, встречи с&nbsp;друзьями.</p><ul><li>Яндекс Директ: РСЯ по&nbsp;интересам и&nbsp;тесты / Бренд</li><li>базы недвижимости, ИИ-ассистент</li><li>VK, карты</li></ul></div></li>
       </ol>
     </section>
-    <section class="slide r-visual" data-kicker="02 · аудитория" data-num="27 / 62" data-title="Визуалы — зрелые пары с детьми">
+    <section class="slide r-visual" data-kicker="02 · аудитория" data-num="27 / 63" data-title="Визуалы — зрелые пары с детьми">
       <h2 class="r-head">Визуалы для ЦА — зрелые пары с детьми</h2>
       <div class="r-visual-grid">
         <img src="rsti/img/audience-0911/slide-8-1.png" alt="Рекламный визуал для зрелых пар с детьми">
       </div>
     </section>
-    <section class="slide r-blk" data-kicker="02 · аудитория" data-num="28 / 62" data-title="Региональная ЦА">
+    <section class="slide r-blk" data-kicker="02 · аудитория" data-num="28 / 63" data-title="Региональная ЦА">
       <h2 class="r-head">Региональная ЦА</h2>
       <div class="r-cols">
         <div class="r-col"><p class="r-k">портреты</p>
@@ -1369,21 +1388,21 @@ html{ font-size: calc(100vw / 22.5); }
         </div>
       </div>
     </section>
-    <section class="slide r-visual" data-kicker="02 · аудитория" data-num="29 / 62" data-title="Реклама — квартира для детей">
+    <section class="slide r-visual" data-kicker="02 · аудитория" data-num="29 / 63" data-title="Реклама — квартира для детей">
       <h2 class="r-head">Реклама направлена на родителей, которые покупают квартиру для детей</h2>
       <div class="r-visual-grid">
         <img src="rsti/img/audience-0911/slide-10-1.png" alt="Реклама квартиры для детей 1">
         <img src="rsti/img/audience-0911/slide-10-2.png" alt="Реклама квартиры для детей 2">
       </div>
     </section>
-    <section class="slide r-visual" data-kicker="02 · аудитория" data-num="30 / 62" data-title="Реклама — переезд с Севера">
+    <section class="slide r-visual" data-kicker="02 · аудитория" data-num="30 / 63" data-title="Реклама — переезд с Севера">
       <h2 class="r-head">Реклама направлена на региональную аудиторию, с мотивом переехать с севера</h2>
       <div class="r-visual-grid">
         <img src="rsti/img/audience-0911/slide-11-1.png" alt="Реклама переезда с Севера 1">
         <img src="rsti/img/audience-0911/slide-11-2.png" alt="Реклама переезда с Севера 2">
       </div>
     </section>
-    <section class="slide r-visual" data-kicker="02 · аудитория" data-num="31 / 62" data-title="Реклама — инвесторы">
+    <section class="slide r-visual" data-kicker="02 · аудитория" data-num="31 / 63" data-title="Реклама — инвесторы">
       <h2 class="r-head">Реклама направлена на инвесторов</h2>
       <div class="r-visual-grid r-visual-three">
         <img src="rsti/img/audience-0911/slide-12-1.png" alt="Реклама для инвесторов 1">
@@ -1391,7 +1410,7 @@ html{ font-size: calc(100vw / 22.5); }
         <img src="rsti/img/audience-0911/slide-12-3.png" alt="Реклама для инвесторов 3">
       </div>
     </section>
-<section class="slide r-ad r-ad-a r-ad-final" data-kicker="02 · аудитория" data-num="32 / 62" data-title="Адепты места">
+<section class="slide r-ad r-ad-a r-ad-final" data-kicker="02 · аудитория" data-num="32 / 63" data-title="Адепты места">
       <h2 class="r-head">Адепты места</h2>
       <div class="r-ab-l"><p class="r-k">профиль</p><p class="r-ab-prof">30–65 лет, живут в&nbsp;Красносельском районе или рядом много лет. Хорошо знают инфраструктуру, привыкли к&nbsp;маршрутам,
         школам, поликлиникам, магазинам. Переезжать в&nbsp;другой район не&nbsp;хотят. Доход средний и&nbsp;выше среднего, часто есть своя квартира и&nbsp;автомобиль.</p></div>
@@ -1403,13 +1422,13 @@ html{ font-size: calc(100vw / 22.5); }
         <div class="r-ar"><span class="r-n">05</span><h3>Дети покупают родителям рядом с&nbsp;собой</h3><ul class="r-dash"><li>Взрослые дети уже живут в&nbsp;районе и&nbsp;покупают квартиру родителям.</li><li>Хотят быть рядом, но&nbsp;в&nbsp;отдельном жилье.</li><li>Важны доступная среда, поликлиника, тихий двор, мало этажей.</li><li>Чаще смотрят 1- и&nbsp;2-комнатные.</li></ul></div>
       </div>
     </section>
-    <section class="slide r-div" data-kicker="03 · стратегия" data-num="33 / 62" data-sec="03" data-menu="СТРАТЕГИЯ" data-title="Стратегия · обложка">
+    <section class="slide r-div" data-kicker="03 · стратегия" data-num="33 / 63" data-sec="03" data-menu="СТРАТЕГИЯ" data-title="Стратегия · обложка">
       <figure class="r-div-bg"><img src="rsti/img/kp-arch.jpg" alt="Арка и фасад ЖК «Кинопарк»"></figure>
       <p class="r-num">03</p>
       <h2 class="r-div-t">Стратегия</h2>
       <p class="r-div-s">Стратегические решения и&nbsp;логика взаимодействия с&nbsp;покупателем</p>
     </section>
-    <section class="slide r-blk" data-kicker="03 · стратегия" data-num="34 / 62" data-title="Блок 1. Упор на адептов места">
+    <section class="slide r-blk" data-kicker="03 · стратегия" data-num="34 / 63" data-title="Блок 1. Упор на адептов места">
       <p class="r-rub">блок 1</p>
       <h2 class="r-head">Упор на&nbsp;адептов места</h2>
       <div class="r-cols">
@@ -1432,7 +1451,7 @@ html{ font-size: calc(100vw / 22.5); }
         </tbody>
       </table>
     </section>
-    <section class="slide r-blk" data-kicker="03 · стратегия" data-num="35 / 62" data-title="Блок 2. Охватный инструмент раз в месяц">
+    <section class="slide r-blk" data-kicker="03 · стратегия" data-num="35 / 63" data-title="Блок 2. Охватный инструмент раз в месяц">
       <p class="r-rub">блок 2</p>
       <h2 class="r-head">Охватный инструмент раз в&nbsp;месяц</h2>
       <div class="r-cols">
@@ -1460,7 +1479,7 @@ html{ font-size: calc(100vw / 22.5); }
           <p class="r-p">Собрать новую аудиторию, которая не&nbsp;знала о&nbsp;проекте, и&nbsp;прогреть её до&nbsp;заявки через ретаргетинг.</p></div>
       </div>
     </section>
-    <section class="slide r-day" data-kicker="03 · стратегия" data-num="36 / 62" data-title="Как добиться внимания">
+    <section class="slide r-day" data-kicker="03 · стратегия" data-num="36 / 63" data-title="Как добиться внимания">
       <h2 class="r-head">Как добиться внимания целевой аудитории</h2>
       <p class="r-head-s">День покупателя и&nbsp;где его застать</p>
       <div class="r-ring" aria-hidden="true"></div>
@@ -1472,7 +1491,7 @@ html{ font-size: calc(100vw / 22.5); }
         <li data-h="19.5-23" data-g="3"><span class="r-n">05</span><b>Дома, хобби</b><div class="r-ring-more"><p>Наедине, с&nbsp;семьёй, за&nbsp;хобби или спортом:</p><ul><li>соцсети, ресурсы на&nbsp;интересную тему</li><li>фильмы на&nbsp;киносервисах</li></ul></div></li>
       </ol>
     </section>
-    <section class="slide r-ai" data-kicker="03 · стратегия" data-num="37 / 62" data-title="ИИ-агенты для обработки заявок">
+    <section class="slide r-ai" data-kicker="03 · стратегия" data-num="37 / 63" data-title="ИИ-агенты для обработки заявок">
       <p class="r-rub">блок 3</p>
       <h2 class="r-head">ИИ-агенты для обработки заявок</h2>
       <div class="r-ai-pair">
@@ -1497,7 +1516,7 @@ html{ font-size: calc(100vw / 22.5); }
         </ul>
       </div>
     </section>
-    <section class="slide r-ai" data-kicker="03 · стратегия" data-num="38 / 62" data-title="ИИ для подготовки баннеров">
+    <section class="slide r-ai" data-kicker="03 · стратегия" data-num="38 / 63" data-title="ИИ для подготовки баннеров">
       <p class="r-rub">блок 4</p>
       <h2 class="r-head">ИИ для подготовки баннеров</h2>
       <div class="r-ai-pair">
@@ -1521,7 +1540,7 @@ html{ font-size: calc(100vw / 22.5); }
         </ul>
       </div>
     </section>
-    <section class="slide r-video" data-kicker="03 · стратегия" data-num="39 / 62" data-title="Продакшн ИИ-видеороликов">
+    <section class="slide r-video" data-kicker="03 · стратегия" data-num="39 / 63" data-title="Продакшн ИИ-видеороликов">
       <h2 class="r-head">Продакшн ИИ-видеороликов</h2>
       <div class="r-vd-row">
         <video src="rsti/video/ai-video-1.mp4" muted loop playsinline autoplay preload="metadata"></video>
@@ -1529,7 +1548,7 @@ html{ font-size: calc(100vw / 22.5); }
         <video src="rsti/video/ai-video-3.mp4" muted loop playsinline autoplay preload="metadata"></video>
       </div>
     </section>
-    <section class="slide r-logic" data-kicker="03 · стратегия" data-num="40 / 62" data-title="Итоговая логика стратегии">
+    <section class="slide r-logic" data-kicker="03 · стратегия" data-num="40 / 63" data-title="Итоговая логика стратегии">
       <h2 class="r-head">Итоговая логика стратегии</h2>
       <div class="r-lg-row">
         <div class="r-lg"><p class="r-lg-n">01</p><h3 class="r-lg-t">Адепты места</h3>
@@ -1544,28 +1563,29 @@ html{ font-size: calc(100vw / 22.5); }
       <p class="r-lg-sum">Четыре опоры: удерживаем своих через адептов места, привлекаем новых через охват, не&nbsp;теряем тёплых через
         ИИ-агента и&nbsp;выделяемся визуально через ИИ-креативы.</p>
     </section>
-    <section class="slide r-div" data-kicker="04 · медиаплан и бюджет" data-num="41 / 62" data-sec="04" data-menu="МЕДИАПЛАН И БЮДЖЕТ" data-title="Медиаплан и бюджет · обложка">
+    <section class="slide r-div" data-kicker="04 · медиаплан и бюджет" data-num="41 / 63" data-sec="04" data-menu="МЕДИАПЛАН И БЮДЖЕТ" data-title="Медиаплан и бюджет · обложка">
       <figure class="r-div-bg"><img src="rsti/img/kp-night.jpg" alt="ЖК «Кинопарк» вечером"></figure>
       <p class="r-num">04</p>
       <h2 class="r-div-t">Медиаплан и&nbsp;бюджет</h2>
-      <p class="r-div-s">Медиаплан в&nbsp;диапазоне октябрь&nbsp;— ноябрь, годовой план</p>
+      <p class="r-div-s">Медиаплан на&nbsp;октябрь и&nbsp;расчёт договорной цены</p>
     </section>
-    <section class="slide r-months" data-kicker="04 · медиаплан и бюджет" data-num="42 / 62" data-title="Медиатактика на 3 месяца">
-      <h2 class="r-head">Медиатактика на&nbsp;3&nbsp;месяца</h2>
-      <p class="r-head-s">Октябрь&nbsp;— декабрь 2026</p>
-      <div class="r-mo-row">
-        <div class="r-mo"><span class="r-n">01</span><h3>Октябрь</h3>
-          <p class="r-p">Первый месяц&nbsp;— запуски, массивные настройки и&nbsp;обучение рекламных кампаний. Работа с&nbsp;базами недвижимости: наполнение информацией и&nbsp;подготовка материалов.</p>
-          <ul class="r-dash"><li>Запуски и&nbsp;настройка РК</li><li>Оптимизация</li><li>Подготовка и&nbsp;наполнение источников материалами</li><li>Первичная аналитика и&nbsp;корректировка стратегии</li><li>Упор на&nbsp;ЦА «Адепты места»: РК по&nbsp;ГЕО</li></ul></div>
-        <div class="r-mo"><span class="r-n">02</span><h3>Ноябрь</h3>
-          <p class="r-p">Добавляем в&nbsp;сплит охватные инструменты. Продолжаем прорабатывать одну из&nbsp;ключевых РК и&nbsp;заранее собираем новую аудиторию для дальнейшей работы с&nbsp;ней.</p>
-          <ul class="r-dash"><li>Запуск охватных инструментов</li><li>Оптимизация РК по&nbsp;итогам октября</li><li>Упор на&nbsp;ЦА «Адепты места» и&nbsp;сбор новой аудитории</li></ul></div>
-        <div class="r-mo"><span class="r-n">03</span><h3>Декабрь</h3>
-          <p class="r-p">Есть костяк инструментов, которые дают качественные целевые обращения, а&nbsp;охватные продолжают наращивать новую аудиторию.</p>
-          <ul class="r-dash"><li>Докручиваем стратегию: ретаргетинг, новогодние спецпредложения, удержание интереса</li><li>Охватные инструменты&nbsp;— до&nbsp;20-х чисел декабря</li><li>Оптимизация РК по&nbsp;итогам двух месяцев</li></ul></div>
-      </div>
-    </section>
-    <section class="slide r-wide r-budget" data-kicker="04 · медиаплан и бюджет" data-num="43 / 62" data-title="Бюджет на октябрь">
+    <section class="slide r-wide r-mp" data-kicker="04 · медиаплан и бюджет" data-num="42 / 63" data-title="Медиаплан на октябрь" data-mp-sheet="1">
+<h2 class="r-head">Медиаплан на октябрь</h2>
+<p class="r-head-s">ЖК «Кинопарк» · октябрь · данные из Excel</p>
+<div class="mp-toolbar"><button type="button" data-mp-cols="D,I,J,S,T,U,X,Y,AA,AB" aria-pressed="true">Площадки и прогноз</button><button type="button" data-mp-cols="D,A,B,C,E,F,G,H,L" aria-pressed="false">Аудитории и форматы</button><button type="button" data-mp-cols="D,K,M,N,O,P,Q,R,V,W,X" aria-pressed="false">Бюджет и комиссии</button></div>
+<div class="mp-scroll" tabindex="0" role="region" aria-label="Медиаплан на октябрь: полная таблица">
+<table class="r-table mp-table"><thead><tr><th data-col="A" title="ТИП РК">Тип РК</th><th data-col="B" title="Подтип РК">Подтип РК</th><th data-col="C" title="Объект рекламирования">Объект</th><th data-col="D" title="Рекламная площадка">Площадка</th><th data-col="E" title="Расположение рекламного носителя">Размещение</th><th data-col="F" title="Таргетинги (интересы, соцдем, R&amp;F)">Аудитория и таргетинги</th><th data-col="G" title="Формат размещения">Формат</th><th data-col="H" title="Формат расчетов">Модель оплаты</th><th data-col="I" title="Показов">Показы</th><th data-col="J" title="Охват">Охват</th><th data-col="K" title="Цена за единицу без НДС">Цена единицы без НДС, ₽</th><th data-col="L" title="Срок оказания услуг">Период</th><th data-col="M" title="Стоимость без НДС">Стоимость без НДС, ₽</th><th data-col="N" title="Стоимость c НДС">Стоимость с НДС, ₽</th><th data-col="O" title="Сезонный коэф-нт">Сезонный коэфф.</th><th data-col="P" title="Скидка %">Скидка, %</th><th data-col="Q" title="Итоговая стоимость с НДС">После скидки с НДС, ₽</th><th data-col="R" title="Итоговая стоимость без НДС">После скидки без НДС, ₽</th><th data-col="S" title="CTR">CTR, %</th><th data-col="T" title="Кликов">Клики</th><th data-col="U" title="Прогноз цены за клик">CPC, ₽</th><th data-col="V" title="Агентская комиссия в %">Комиссия, %</th><th data-col="W" title="Агентская комиссия">Комиссия, ₽</th><th data-col="X" title="Итоговая стоимость с НДС и АК">Бюджет с НДС и АК, ₽</th><th data-col="Y" title="CR">CR, %</th><th data-col="AA" title="Стоимость лида с НДС и АК">Цена лида, ₽</th><th data-col="AB" title="Прогноз кол-ва лидов">Лиды</th></tr></thead><tbody><tr class="mp-group"><th colspan="27"><span data-cell="1:C3" data-value="Контекстная реклама (Яндекс Директ в поиске, сетях, ЕПК, МКБ и т.д.)">Контекстная реклама (Яндекс Директ в поиске, сетях, ЕПК, МКБ и т.д.)</span> · Доля бюджета: <span data-cell="1:X3" data-value="0.38934845032858612">38,93%</span> · Стоимость лида: <span data-cell="1:AA3" data-value="33136.038343667322">33 136,04</span> · Лидов: <span data-cell="1:AB3" data-value="47">47</span></th></tr><tr><td data-col="A"><span data-cell="1:A4" data-value="Perfomance инструменты">Perfomance инструменты</span></td><td data-col="B"><span data-cell="1:B4" data-value="Классифайды">Классифайды</span></td><td data-col="C"><span data-cell="1:C4" data-value="ЖК Кинопарк">ЖК Кинопарк</span></td><td data-col="D"><span data-cell="1:D4" data-value="Яндекс Поиск">Яндекс Поиск</span></td><td data-col="E"><span data-cell="1:E4" data-value="В результатах поиска Яндекса и сайтов-партнеров">В результатах поиска Яндекса и сайтов-партнеров</span></td><td data-col="F"><span data-cell="1:F4" data-value="ГЕО: СПб и ЛО, Регионы.&#10;МЖ 25-55+ (с корректировками для конверсионных групп);&#10;Таргетинг по ключевым словам.">ГЕО: СПб и ЛО, Регионы.<br>МЖ 25-55+ (с корректировками для конверсионных групп);<br>Таргетинг по ключевым словам.</span></td><td data-col="G"><span data-cell="1:G4" data-value="Текстово-графические объявления">Текстово-графические объявления</span></td><td data-col="H"><span data-cell="1:H4" data-value="Клик">Клик</span></td><td data-col="I" class="mp-number"><span data-cell="1:I4" data-value="24000">24 000</span></td><td data-col="J" class="mp-number"><span data-cell="1:J4" data-value="8000">8 000</span></td><td data-col="K" class="mp-number"><span data-cell="1:K4" data-value="500">500</span></td><td data-col="L"><span data-cell="1:L4" data-value="01.10-31.10">01.10-31.10</span></td><td data-col="M" class="mp-number"><span data-cell="1:M4" data-value="600000">600 000</span></td><td data-col="N" class="mp-number"><span data-cell="1:N4" data-value="732000">732 000</span></td><td data-col="O" class="mp-number"><span data-cell="1:O4" data-value="1">1</span></td><td data-col="P" class="mp-number"><span data-cell="1:P4" data-value="0">0%</span></td><td data-col="Q" class="mp-number"><span data-cell="1:Q4" data-value="732000">732 000</span></td><td data-col="R" class="mp-number"><span data-cell="1:R4" data-value="600000">600 000</span></td><td data-col="S" class="mp-number"><span data-cell="1:S4" data-value="0.05">5%</span></td><td data-col="T" class="mp-number"><span data-cell="1:T4" data-value="1200">1 200</span></td><td data-col="U" class="mp-number"><span data-cell="1:U4" data-value="671">671</span></td><td data-col="V" class="mp-number"><span data-cell="1:V4" data-value="0.1">10%</span></td><td data-col="W" class="mp-number"><span data-cell="1:W4" data-value="73200">73 200</span></td><td data-col="X" class="mp-number"><span data-cell="1:X4" data-value="805200">805 200</span></td><td data-col="Y" class="mp-number"><span data-cell="1:Y4" data-value="2.0833333333333332E-2">2,08%</span></td><td data-col="AA" class="mp-number"><span data-cell="1:AA4" data-value="32208">32 208</span></td><td data-col="AB" class="mp-number"><span data-cell="1:AB4" data-value="25">25</span></td></tr><tr><td data-col="A"><span data-cell="1:A5" data-value="">—</span></td><td data-col="B"><span data-cell="1:B5" data-value="">—</span></td><td data-col="C"><span data-cell="1:C5" data-value="ЖК Кинопарк">ЖК Кинопарк</span></td><td data-col="D"><span data-cell="1:D5" data-value="Яндекс РСЯ">Яндекс РСЯ</span></td><td data-col="E"><span data-cell="1:E5" data-value="Рекламная сеть Яндекса и сайтов-партнеров">Рекламная сеть Яндекса и сайтов-партнеров</span></td><td data-col="F"><span data-cell="1:F5" data-value="ГЕО: СПб и ЛО, Регионы.&#10;МЖ 25-55+ (с корректировками для конверсионных групп);&#10;Таргетинг по ключевым словам;&#10;Ретаргетинг, Интерес к недвижимости, Look-Alike, сегменты Я.Метрики (достижение целей; посещение сайта)">ГЕО: СПб и ЛО, Регионы.<br>МЖ 25-55+ (с корректировками для конверсионных групп);<br>Таргетинг по ключевым словам;<br>Ретаргетинг, Интерес к недвижимости, Look-Alike, сегменты Я.Метрики (достижение целей; посещение сайта)</span></td><td data-col="G"><span data-cell="1:G5" data-value="Текстово-графические объявления, Графические объявления">Текстово-графические объявления, Графические объявления</span></td><td data-col="H"><span data-cell="1:H5" data-value="Клик">Клик</span></td><td data-col="I" class="mp-number"><span data-cell="1:I5" data-value="1688400">1 688 400</span></td><td data-col="J" class="mp-number"><span data-cell="1:J5" data-value="422100">422 100</span></td><td data-col="K" class="mp-number"><span data-cell="1:K5" data-value="35.003801000000003">35</span></td><td data-col="L"><span data-cell="1:L5" data-value="01.10-31.10">01.10-31.10</span></td><td data-col="M" class="mp-number"><span data-cell="1:M5" data-value="295502.08804200002">295 502,09</span></td><td data-col="N" class="mp-number"><span data-cell="1:N5" data-value="360512.54741124">360 512,55</span></td><td data-col="O" class="mp-number"><span data-cell="1:O5" data-value="1">1</span></td><td data-col="P" class="mp-number"><span data-cell="1:P5" data-value="0">0%</span></td><td data-col="Q" class="mp-number"><span data-cell="1:Q5" data-value="360512.54741124">360 512,55</span></td><td data-col="R" class="mp-number"><span data-cell="1:R5" data-value="295502.08804200002">295 502,09</span></td><td data-col="S" class="mp-number"><span data-cell="1:S5" data-value="5.0000000000000001E-3">0,5%</span></td><td data-col="T" class="mp-number"><span data-cell="1:T5" data-value="8442">8 442</span></td><td data-col="U" class="mp-number"><span data-cell="1:U5" data-value="46.975100941999997">46,98</span></td><td data-col="V" class="mp-number"><span data-cell="1:V5" data-value="0.1">10%</span></td><td data-col="W" class="mp-number"><span data-cell="1:W5" data-value="36051.254741124001">36 051,25</span></td><td data-col="X" class="mp-number"><span data-cell="1:X5" data-value="396563.80215236399">396 563,80</span></td><td data-col="Y" class="mp-number"><span data-cell="1:Y5" data-value="1.4214641080312722E-3">0,14%</span></td><td data-col="AA" class="mp-number"><span data-cell="1:AA5" data-value="33046.983512696999">33 046,98</span></td><td data-col="AB" class="mp-number"><span data-cell="1:AB5" data-value="12">12</span></td></tr><tr><td data-col="A"><span data-cell="1:A6" data-value="">—</span></td><td data-col="B"><span data-cell="1:B6" data-value="">—</span></td><td data-col="C"><span data-cell="1:C6" data-value="ЖК Кинопарк">ЖК Кинопарк</span></td><td data-col="D"><span data-cell="1:D6" data-value="Яндекс Telegram">Яндекс Telegram</span></td><td data-col="E"><span data-cell="1:E6" data-value="Каналы Telegram">Каналы Telegram</span></td><td data-col="F"><span data-cell="1:F6" data-value="ГЕО: СПб и ЛО.&#10;Таргетинг по тематике каналов">ГЕО: СПб и ЛО.<br>Таргетинг по тематике каналов</span></td><td data-col="G"><span data-cell="1:G6" data-value="Текстово-графические объявления">Текстово-графические объявления</span></td><td data-col="H"><span data-cell="1:H6" data-value="Клик">Клик</span></td><td data-col="I" class="mp-number"><span data-cell="1:I6" data-value="566666.66666666663">566 666,67</span></td><td data-col="J" class="mp-number"><span data-cell="1:J6" data-value="141666.66666666666">141 666,67</span></td><td data-col="K" class="mp-number"><span data-cell="1:K6" data-value="300">300</span></td><td data-col="L"><span data-cell="1:L6" data-value="01.10-31.10">01.10-31.10</span></td><td data-col="M" class="mp-number"><span data-cell="1:M6" data-value="255000">255 000</span></td><td data-col="N" class="mp-number"><span data-cell="1:N6" data-value="311100">311 100</span></td><td data-col="O" class="mp-number"><span data-cell="1:O6" data-value="1">1</span></td><td data-col="P" class="mp-number"><span data-cell="1:P6" data-value="0">0%</span></td><td data-col="Q" class="mp-number"><span data-cell="1:Q6" data-value="311100">311 100</span></td><td data-col="R" class="mp-number"><span data-cell="1:R6" data-value="255000">255 000</span></td><td data-col="S" class="mp-number"><span data-cell="1:S6" data-value="1.5E-3">0,15%</span></td><td data-col="T" class="mp-number"><span data-cell="1:T6" data-value="850">850</span></td><td data-col="U" class="mp-number"><span data-cell="1:U6" data-value="402.6">402,60</span></td><td data-col="V" class="mp-number"><span data-cell="1:V6" data-value="0.1">10%</span></td><td data-col="W" class="mp-number"><span data-cell="1:W6" data-value="31110">31 110</span></td><td data-col="X" class="mp-number"><span data-cell="1:X6" data-value="342210">342 210</span></td><td data-col="Y" class="mp-number"><span data-cell="1:Y6" data-value="1.1764705882352941E-2">1,18%</span></td><td data-col="AA" class="mp-number"><span data-cell="1:AA6" data-value="34221">34 221</span></td><td data-col="AB" class="mp-number"><span data-cell="1:AB6" data-value="10">10</span></td></tr><tr><td data-col="A"><span data-cell="1:A7" data-value="">—</span></td><td data-col="B"><span data-cell="1:B7" data-value="">—</span></td><td data-col="C"><span data-cell="1:C7" data-value="ЖК Кинопарк">ЖК Кинопарк</span></td><td data-col="D"><span data-cell="1:D7" data-value="Яндекс МКБ">Яндекс МКБ</span></td><td data-col="E"><span data-cell="1:E7" data-value="В результатах поиска Яндекса">В результатах поиска Яндекса</span></td><td data-col="F"><span data-cell="1:F7" data-value="ГЕО: СПб и ЛО.&#10;МЖ 25-55+ (с корректировками для конверсионных групп);&#10;Таргетинг по ключевым словам.">ГЕО: СПб и ЛО.<br>МЖ 25-55+ (с корректировками для конверсионных групп);<br>Таргетинг по ключевым словам.</span></td><td data-col="G"><span data-cell="1:G7" data-value="Графические объявления">Графические объявления</span></td><td data-col="H"><span data-cell="1:H7" data-value="Клик">Клик</span></td><td data-col="I" class="mp-number"><span data-cell="1:I7" data-value="3333.3333333333335">3 333,33</span></td><td data-col="J" class="mp-number"><span data-cell="1:J7" data-value="1111.1111111111111">1 111,11</span></td><td data-col="K" class="mp-number"><span data-cell="1:K7" data-value="1000">1 000</span></td><td data-col="L"><span data-cell="1:L7" data-value="01.10-31.10">01.10-31.10</span></td><td data-col="M" class="mp-number"><span data-cell="1:M7" data-value="10000">10 000</span></td><td data-col="N" class="mp-number"><span data-cell="1:N7" data-value="12200">12 200</span></td><td data-col="O" class="mp-number"><span data-cell="1:O7" data-value="1">1</span></td><td data-col="P" class="mp-number"><span data-cell="1:P7" data-value="0">0%</span></td><td data-col="Q" class="mp-number"><span data-cell="1:Q7" data-value="12200">12 200</span></td><td data-col="R" class="mp-number"><span data-cell="1:R7" data-value="10000">10 000</span></td><td data-col="S" class="mp-number"><span data-cell="1:S7" data-value="3.0000000000000001E-3">0,3%</span></td><td data-col="T" class="mp-number"><span data-cell="1:T7" data-value="10">10</span></td><td data-col="U" class="mp-number"><span data-cell="1:U7" data-value="1342">1 342</span></td><td data-col="V" class="mp-number"><span data-cell="1:V7" data-value="0.1">10%</span></td><td data-col="W" class="mp-number"><span data-cell="1:W7" data-value="1220">1 220</span></td><td data-col="X" class="mp-number"><span data-cell="1:X7" data-value="13420">13 420</span></td><td data-col="Y"><span data-cell="1:Y7" data-value="-">-</span></td><td data-col="AA"><span data-cell="1:AA7" data-value="-">-</span></td><td data-col="AB"><span data-cell="1:AB7" data-value="-">-</span></td></tr><tr class="mp-group"><th colspan="27"><span data-cell="1:C8" data-value="Таргетированная реклама (Вконтакте, Telegram и т.д.)">Таргетированная реклама (Вконтакте, Telegram и т.д.)</span> · Доля бюджета: <span data-cell="1:X8" data-value="7.0454999962088802E-2">7,05%</span> · Стоимость лида: <span data-cell="1:AA8" data-value="20130">20 130</span> · Лидов: <span data-cell="1:AB8" data-value="14">14</span></th></tr><tr><td data-col="A"><span data-cell="1:A9" data-value="">—</span></td><td data-col="B"><span data-cell="1:B9" data-value="">—</span></td><td data-col="C"><span data-cell="1:C9" data-value="ЖК Кинопарк">ЖК Кинопарк</span></td><td data-col="D"><span data-cell="1:D9" data-value="Vk Ads">Vk Ads</span></td><td data-col="E"><span data-cell="1:E9" data-value="Внутренние страницы VK, ОК, рекламной сети VK, проектов VK">Внутренние страницы VK, ОК, рекламной сети VK, проектов VK</span></td><td data-col="F"><span data-cell="1:F9" data-value="ГЕО: СПб и ЛО&#10;МЖ 25-55+&#10;Таргетинг по интересам, ключевым словам,  Look-Alike">ГЕО: СПб и ЛО<br>МЖ 25-55+<br>Таргетинг по интересам, ключевым словам,  Look-Alike</span></td><td data-col="G"><span data-cell="1:G9" data-value="Лидогенерация">Лидогенерация</span></td><td data-col="H"><span data-cell="1:H9" data-value="1000 показов">1000 показов</span></td><td data-col="I" class="mp-number"><span data-cell="1:I9" data-value="1000000">1 000 000</span></td><td data-col="J" class="mp-number"><span data-cell="1:J9" data-value="333333.33333333331">333 333,33</span></td><td data-col="K" class="mp-number"><span data-cell="1:K9" data-value="200">200</span></td><td data-col="L"><span data-cell="1:L9" data-value="01.10-31.10">01.10-31.10</span></td><td data-col="M" class="mp-number"><span data-cell="1:M9" data-value="210000">210 000</span></td><td data-col="N" class="mp-number"><span data-cell="1:N9" data-value="256200">256 200</span></td><td data-col="O" class="mp-number"><span data-cell="1:O9" data-value="1">1</span></td><td data-col="P" class="mp-number"><span data-cell="1:P9" data-value="0">0%</span></td><td data-col="Q" class="mp-number"><span data-cell="1:Q9" data-value="256200">256 200</span></td><td data-col="R" class="mp-number"><span data-cell="1:R9" data-value="210000">210 000</span></td><td data-col="S" class="mp-number"><span data-cell="1:S9" data-value="3.0000000000000001E-3">0,3%</span></td><td data-col="T" class="mp-number"><span data-cell="1:T9" data-value="3000">3 000</span></td><td data-col="U" class="mp-number"><span data-cell="1:U9" data-value="93.94">93,94</span></td><td data-col="V" class="mp-number"><span data-cell="1:V9" data-value="0.1">10%</span></td><td data-col="W" class="mp-number"><span data-cell="1:W9" data-value="25620">25 620</span></td><td data-col="X" class="mp-number"><span data-cell="1:X9" data-value="281820">281 820</span></td><td data-col="Y" class="mp-number"><span data-cell="1:Y9" data-value="4.6666666666666671E-3">0,47%</span></td><td data-col="AA" class="mp-number"><span data-cell="1:AA9" data-value="20130">20 130</span></td><td data-col="AB" class="mp-number"><span data-cell="1:AB9" data-value="14">14</span></td></tr><tr class="mp-group"><th colspan="27"><span data-cell="1:C10" data-value="Медийная реклама (Яндекс Карты, Программатики и т.д.)">Медийная реклама (Яндекс Карты, Программатики и т.д.)</span> · Доля бюджета: <span data-cell="1:X10" data-value="9.8746549946865381E-2">9,87%</span> · Стоимость лида: <span data-cell="1:AA10" data-value="18936.866666666665">18 936,87</span> · Лидов: <span data-cell="1:AB10" data-value="6">6</span></th></tr><tr><td data-col="A"><span data-cell="1:A11" data-value="Perfomance инструменты">Perfomance инструменты</span></td><td data-col="B"><span data-cell="1:B11" data-value="Геосервисы">Геосервисы</span></td><td data-col="C"><span data-cell="1:C11" data-value="ЖК Кинопарк">ЖК Кинопарк</span></td><td data-col="D"><span data-cell="1:D11" data-value="Яндекс.Карты">Яндекс.Карты</span></td><td data-col="E"><span data-cell="1:E11" data-value="yandex.maps ">yandex.maps </span></td><td data-col="F"><span data-cell="1:F11" data-value="ГЕО: СПБ и ЛО">ГЕО: СПБ и ЛО</span></td><td data-col="G"><span data-cell="1:G11" data-value="Супербрендированное приоритетное размещение (пакет 90 дней)">Супербрендированное приоритетное размещение (пакет 90 дней)</span></td><td data-col="H"><span data-cell="1:H11" data-value="Пакет">Пакет</span></td><td data-col="I" class="mp-number"><span data-cell="1:I11" data-value="1490000">1 490 000</span></td><td data-col="J"><span data-cell="1:J11" data-value="-">-</span></td><td data-col="K" class="mp-number"><span data-cell="1:K11" data-value="84665.573770491799">84 665,57</span></td><td data-col="L"><span data-cell="1:L11" data-value="01.10-31.10">01.10-31.10</span></td><td data-col="M" class="mp-number"><span data-cell="1:M11" data-value="84665.573770491799">84 665,57</span></td><td data-col="N" class="mp-number"><span data-cell="1:N11" data-value="103292">103 292</span></td><td data-col="O" class="mp-number"><span data-cell="1:O11" data-value="1">1</span></td><td data-col="P" class="mp-number"><span data-cell="1:P11" data-value="0">0%</span></td><td data-col="Q" class="mp-number"><span data-cell="1:Q11" data-value="103292">103 292</span></td><td data-col="R" class="mp-number"><span data-cell="1:R11" data-value="84665.573770491799">84 665,57</span></td><td data-col="S" class="mp-number"><span data-cell="1:S11" data-value="2.8859060402684566E-4">0,03%</span></td><td data-col="T" class="mp-number"><span data-cell="1:T11" data-value="430">430</span></td><td data-col="U" class="mp-number"><span data-cell="1:U11" data-value="264.2353488372093">264,24</span></td><td data-col="V" class="mp-number"><span data-cell="1:V11" data-value="0.1">10%</span></td><td data-col="W" class="mp-number"><span data-cell="1:W11" data-value="10329.200000000001">10 329,20</span></td><td data-col="X" class="mp-number"><span data-cell="1:X11" data-value="113621.2">113 621,20</span></td><td data-col="Y" class="mp-number"><span data-cell="1:Y11" data-value="1.3953488372093023E-2">1,4%</span></td><td data-col="AA" class="mp-number"><span data-cell="1:AA11" data-value="18936.866666666665">18 936,87</span></td><td data-col="AB" class="mp-number"><span data-cell="1:AB11" data-value="6">6</span></td></tr><tr><td data-col="A"><span data-cell="1:A12" data-value="">—</span></td><td data-col="B"><span data-cell="1:B12" data-value="">—</span></td><td data-col="C"><span data-cell="1:C12" data-value="ЖК Кинопарк">ЖК Кинопарк</span></td><td data-col="D"><span data-cell="1:D12" data-value="ИИ-ассистент">ИИ-ассистент</span></td><td data-col="E"><span data-cell="1:E12" data-value="-">-</span></td><td data-col="F"><span data-cell="1:F12" data-value="-">-</span></td><td data-col="G"><span data-cell="1:G12" data-value="-">-</span></td><td data-col="H"><span data-cell="1:H12" data-value="Услуга">Услуга</span></td><td data-col="I"><span data-cell="1:I12" data-value="-">-</span></td><td data-col="J"><span data-cell="1:J12" data-value="-">-</span></td><td data-col="K" class="mp-number"><span data-cell="1:K12" data-value="52160.953800298063">52 160,95</span></td><td data-col="L"><span data-cell="1:L12" data-value="01.10-31.10">01.10-31.10</span></td><td data-col="M" class="mp-number"><span data-cell="1:M12" data-value="52160.953800298063">52 160,95</span></td><td data-col="N" class="mp-number"><span data-cell="1:N12" data-value="63636.363636363632">63 636,36</span></td><td data-col="O" class="mp-number"><span data-cell="1:O12" data-value="1">1</span></td><td data-col="P" class="mp-number"><span data-cell="1:P12" data-value="0">0%</span></td><td data-col="Q" class="mp-number"><span data-cell="1:Q12" data-value="63636.363636363632">63 636,36</span></td><td data-col="R" class="mp-number"><span data-cell="1:R12" data-value="52160.953800298063">52 160,95</span></td><td data-col="S"><span data-cell="1:S12" data-value="-">-</span></td><td data-col="T"><span data-cell="1:T12" data-value="-">-</span></td><td data-col="U"><span data-cell="1:U12" data-value="-">-</span></td><td data-col="V" class="mp-number"><span data-cell="1:V12" data-value="0.1">10%</span></td><td data-col="W" class="mp-number"><span data-cell="1:W12" data-value="6363.636363636364">6 363,64</span></td><td data-col="X" class="mp-number"><span data-cell="1:X12" data-value="70000">70 000</span></td><td data-col="Y"><span data-cell="1:Y12" data-value="-">-</span></td><td data-col="AA" class="mp-number"><span data-cell="1:AA12" data-value="7000">7 000</span></td><td data-col="AB" class="mp-number"><span data-cell="1:AB12" data-value="10">10</span></td></tr><tr><td data-col="A"><span data-cell="1:A13" data-value="">—</span></td><td data-col="B"><span data-cell="1:B13" data-value="">—</span></td><td data-col="C"><span data-cell="1:C13" data-value="ЖК Кинопарк">ЖК Кинопарк</span></td><td data-col="D"><span data-cell="1:D13" data-value="Avito media">Avito media</span></td><td data-col="E"><span data-cell="1:E13" data-value="avito.ru">avito.ru</span></td><td data-col="F"><span data-cell="1:F13" data-value="ГЕО: СПБ и ЛО">ГЕО: СПБ и ЛО</span></td><td data-col="G"><span data-cell="1:G13" data-value="Native">Native</span></td><td data-col="H"><span data-cell="1:H13" data-value="Клик">Клик</span></td><td data-col="I" class="mp-number"><span data-cell="1:I13" data-value="2916666.666666667">2 916 666,67</span></td><td data-col="J" class="mp-number"><span data-cell="1:J13" data-value="729166.66666666674">729 166,67</span></td><td data-col="K" class="mp-number"><span data-cell="1:K13" data-value="45">45</span></td><td data-col="L"><span data-cell="1:L13" data-value="01.10-31.10">01.10-31.10</span></td><td data-col="M" class="mp-number"><span data-cell="1:M13" data-value="157500">157 500</span></td><td data-col="N" class="mp-number"><span data-cell="1:N13" data-value="192150">192 150</span></td><td data-col="O" class="mp-number"><span data-cell="1:O13" data-value="1">1</span></td><td data-col="P" class="mp-number"><span data-cell="1:P13" data-value="0">0%</span></td><td data-col="Q" class="mp-number"><span data-cell="1:Q13" data-value="192150">192 150</span></td><td data-col="R" class="mp-number"><span data-cell="1:R13" data-value="157500">157 500</span></td><td data-col="S" class="mp-number"><span data-cell="1:S13" data-value="1.1999999999999999E-3">0,12%</span></td><td data-col="T" class="mp-number"><span data-cell="1:T13" data-value="3500">3 500</span></td><td data-col="U" class="mp-number"><span data-cell="1:U13" data-value="60.39">60,39</span></td><td data-col="V" class="mp-number"><span data-cell="1:V13" data-value="0.1">10%</span></td><td data-col="W" class="mp-number"><span data-cell="1:W13" data-value="19215">19 215</span></td><td data-col="X" class="mp-number"><span data-cell="1:X13" data-value="211365">211 365</span></td><td data-col="Y"><span data-cell="1:Y13" data-value="-">-</span></td><td data-col="AA"><span data-cell="1:AA13" data-value="-">-</span></td><td data-col="AB"><span data-cell="1:AB13" data-value="-">-</span></td></tr><tr class="mp-group"><th colspan="27"><span data-cell="1:C14" data-value="Реклама в классифайдах (с оплатой за звонки, аудитории, продвижением)">Реклама в классифайдах (с оплатой за звонки, аудитории, продвижением)</span> · Доля бюджета: <span data-cell="1:X14" data-value="0.43229999976738326">43,23%</span> · Стоимость лида: <span data-cell="1:AA14" data-value="48033.333333333336">48 033,33</span> · Лидов: <span data-cell="1:AB14" data-value="36">36</span></th></tr><tr><td data-col="A"><span data-cell="1:A15" data-value="Perfomance инструменты">Perfomance инструменты</span></td><td data-col="B"><span data-cell="1:B15" data-value="Подготовка РМ">Подготовка РМ</span></td><td data-col="C"><span data-cell="1:C15" data-value="ЖК Кинопарк">ЖК Кинопарк</span></td><td data-col="D"><span data-cell="1:D15" data-value="Cian.ru">Cian.ru</span></td><td data-col="E"><span data-cell="1:E15" data-value="Внутренние страницы сайта">Внутренние страницы сайта</span></td><td data-col="F"><span data-cell="1:F15" data-value="-">-</span></td><td data-col="G"><span data-cell="1:G15" data-value="Выгрузка объявлений в базу через xml-фид + тариф &quot;Lite&quot;">Выгрузка объявлений в базу через xml-фид + тариф &quot;Lite&quot;</span></td><td data-col="H"><span data-cell="1:H15" data-value="Звонок">Звонок</span></td><td data-col="I"><span data-cell="1:I15" data-value="-">-</span></td><td data-col="J"><span data-cell="1:J15" data-value="-">-</span></td><td data-col="K" class="mp-number"><span data-cell="1:K15" data-value="36885.245901639348">36 885,25</span></td><td data-col="L"><span data-cell="1:L15" data-value="01.10-31.10">01.10-31.10</span></td><td data-col="M" class="mp-number"><span data-cell="1:M15" data-value="442622.9508196722">442 622,95</span></td><td data-col="N" class="mp-number"><span data-cell="1:N15" data-value="540000.00000000012">540 000</span></td><td data-col="O" class="mp-number"><span data-cell="1:O15" data-value="1">1</span></td><td data-col="P" class="mp-number"><span data-cell="1:P15" data-value="0">0%</span></td><td data-col="Q" class="mp-number"><span data-cell="1:Q15" data-value="540000.00000000012">540 000</span></td><td data-col="R" class="mp-number"><span data-cell="1:R15" data-value="442622.9508196722">442 622,95</span></td><td data-col="S"><span data-cell="1:S15" data-value="-">-</span></td><td data-col="T"><span data-cell="1:T15" data-value="-">-</span></td><td data-col="U"><span data-cell="1:U15" data-value="-">-</span></td><td data-col="V" class="mp-number"><span data-cell="1:V15" data-value="0.1">10%</span></td><td data-col="W" class="mp-number"><span data-cell="1:W15" data-value="54000.000000000015">54 000</span></td><td data-col="X" class="mp-number"><span data-cell="1:X15" data-value="594000.00000000012">594 000</span></td><td data-col="Y"><span data-cell="1:Y15" data-value="-">-</span></td><td data-col="AA" class="mp-number"><span data-cell="1:AA15" data-value="49500.000000000007">49 500</span></td><td data-col="AB" class="mp-number"><span data-cell="1:AB15" data-value="12">12</span></td></tr><tr><td data-col="A"><span data-cell="1:A16" data-value="">—</span></td><td data-col="B"><span data-cell="1:B16" data-value="">—</span></td><td data-col="C"><span data-cell="1:C16" data-value="ЖК Кинопарк">ЖК Кинопарк</span></td><td data-col="D"><span data-cell="1:D16" data-value="Avito.ru">Avito.ru</span></td><td data-col="E"><span data-cell="1:E16" data-value="Внутренние страницы сайта">Внутренние страницы сайта</span></td><td data-col="F"><span data-cell="1:F16" data-value="-">-</span></td><td data-col="G"><span data-cell="1:G16" data-value="Xml-фид + тариф &quot;Стандартный&quot;">Xml-фид + тариф &quot;Стандартный&quot;</span></td><td data-col="H"><span data-cell="1:H16" data-value="Звонок">Звонок</span></td><td data-col="I"><span data-cell="1:I16" data-value="-">-</span></td><td data-col="J"><span data-cell="1:J16" data-value="-">-</span></td><td data-col="K" class="mp-number"><span data-cell="1:K16" data-value="36721.311475409835">36 721,31</span></td><td data-col="L"><span data-cell="1:L16" data-value="01.10-31.10">01.10-31.10</span></td><td data-col="M" class="mp-number"><span data-cell="1:M16" data-value="734426.2295081967">734 426,23</span></td><td data-col="N" class="mp-number"><span data-cell="1:N16" data-value="896000">896 000</span></td><td data-col="O" class="mp-number"><span data-cell="1:O16" data-value="1">1</span></td><td data-col="P" class="mp-number"><span data-cell="1:P16" data-value="0">0%</span></td><td data-col="Q" class="mp-number"><span data-cell="1:Q16" data-value="896000">896 000</span></td><td data-col="R" class="mp-number"><span data-cell="1:R16" data-value="734426.2295081967">734 426,23</span></td><td data-col="S"><span data-cell="1:S16" data-value="-">-</span></td><td data-col="T"><span data-cell="1:T16" data-value="-">-</span></td><td data-col="U"><span data-cell="1:U16" data-value="-">-</span></td><td data-col="V" class="mp-number"><span data-cell="1:V16" data-value="0.1">10%</span></td><td data-col="W" class="mp-number"><span data-cell="1:W16" data-value="89600">89 600</span></td><td data-col="X" class="mp-number"><span data-cell="1:X16" data-value="985600">985 600</span></td><td data-col="Y"><span data-cell="1:Y16" data-value="-">-</span></td><td data-col="AA" class="mp-number"><span data-cell="1:AA16" data-value="49280">49 280</span></td><td data-col="AB" class="mp-number"><span data-cell="1:AB16" data-value="20">20</span></td></tr><tr><td data-col="A"><span data-cell="1:A17" data-value="">—</span></td><td data-col="B"><span data-cell="1:B17" data-value="">—</span></td><td data-col="C"><span data-cell="1:C17" data-value="ЖК Кинопарк">ЖК Кинопарк</span></td><td data-col="D"><span data-cell="1:D17" data-value="Domclick.ru">Domclick.ru</span></td><td data-col="E"><span data-cell="1:E17" data-value="Внутренние страницы сайта">Внутренние страницы сайта</span></td><td data-col="F"><span data-cell="1:F17" data-value="-">-</span></td><td data-col="G"><span data-cell="1:G17" data-value="Выгрузка объявлений в базу через xml-фид">Выгрузка объявлений в базу через xml-фид</span></td><td data-col="H"><span data-cell="1:H17" data-value="Звонок">Звонок</span></td><td data-col="I"><span data-cell="1:I17" data-value="-">-</span></td><td data-col="J"><span data-cell="1:J17" data-value="-">-</span></td><td data-col="K" class="mp-number"><span data-cell="1:K17" data-value="27868.852459016394">27 868,85</span></td><td data-col="L"><span data-cell="1:L17" data-value="01.10-31.10">01.10-31.10</span></td><td data-col="M" class="mp-number"><span data-cell="1:M17" data-value="111475.40983606558">111 475,41</span></td><td data-col="N" class="mp-number"><span data-cell="1:N17" data-value="136000">136 000</span></td><td data-col="O" class="mp-number"><span data-cell="1:O17" data-value="1">1</span></td><td data-col="P" class="mp-number"><span data-cell="1:P17" data-value="0">0%</span></td><td data-col="Q" class="mp-number"><span data-cell="1:Q17" data-value="136000">136 000</span></td><td data-col="R" class="mp-number"><span data-cell="1:R17" data-value="111475.40983606558">111 475,41</span></td><td data-col="S"><span data-cell="1:S17" data-value="-">-</span></td><td data-col="T"><span data-cell="1:T17" data-value="-">-</span></td><td data-col="U"><span data-cell="1:U17" data-value="-">-</span></td><td data-col="V" class="mp-number"><span data-cell="1:V17" data-value="0.1">10%</span></td><td data-col="W" class="mp-number"><span data-cell="1:W17" data-value="13600">13 600</span></td><td data-col="X" class="mp-number"><span data-cell="1:X17" data-value="149600">149 600</span></td><td data-col="Y"><span data-cell="1:Y17" data-value="-">-</span></td><td data-col="AA" class="mp-number"><span data-cell="1:AA17" data-value="37400">37 400</span></td><td data-col="AB" class="mp-number"><span data-cell="1:AB17" data-value="4">4</span></td></tr><tr class="mp-group"><th colspan="27"><span data-cell="1:C18" data-value="Сопровождающие рекламные расходы (разработка рекламных материалов и прочие доп. услуги)">Сопровождающие рекламные расходы (разработка рекламных материалов и прочие доп. услуги)</span> · Доля бюджета: <span data-cell="1:X18" data-value="9.1499999950764681E-3">0,91%</span></th></tr><tr><td data-col="A"><span data-cell="1:A19" data-value="Perfomance инструменты">Perfomance инструменты</span></td><td data-col="B"><span data-cell="1:B19" data-value="Подготовка РМ">Подготовка РМ</span></td><td data-col="C"><span data-cell="1:C19" data-value="ЖК Кинопарк">ЖК Кинопарк</span></td><td data-col="D"><span data-cell="1:D19" data-value="Production">Production</span></td><td data-col="E"><span data-cell="1:E19" data-value="-">-</span></td><td data-col="F"><span data-cell="1:F19" data-value="-">-</span></td><td data-col="G"><span data-cell="1:G19" data-value="-">-</span></td><td data-col="H"><span data-cell="1:H19" data-value="Услуга">Услуга</span></td><td data-col="I"><span data-cell="1:I19" data-value="-">-</span></td><td data-col="J"><span data-cell="1:J19" data-value="-">-</span></td><td data-col="K" class="mp-number"><span data-cell="1:K19" data-value="30000">30 000</span></td><td data-col="L"><span data-cell="1:L19" data-value="01.10-31.10">01.10-31.10</span></td><td data-col="M" class="mp-number"><span data-cell="1:M19" data-value="30000">30 000</span></td><td data-col="N" class="mp-number"><span data-cell="1:N19" data-value="36600">36 600</span></td><td data-col="O" class="mp-number"><span data-cell="1:O19" data-value="1">1</span></td><td data-col="P" class="mp-number"><span data-cell="1:P19" data-value="0">0%</span></td><td data-col="Q" class="mp-number"><span data-cell="1:Q19" data-value="36600">36 600</span></td><td data-col="R" class="mp-number"><span data-cell="1:R19" data-value="30000">30 000</span></td><td data-col="S"><span data-cell="1:S19" data-value="-">-</span></td><td data-col="T"><span data-cell="1:T19" data-value="-">-</span></td><td data-col="U"><span data-cell="1:U19" data-value="-">-</span></td><td data-col="V" class="mp-number"><span data-cell="1:V19" data-value="0">0%</span></td><td data-col="W" class="mp-number"><span data-cell="1:W19" data-value="0">0</span></td><td data-col="X" class="mp-number"><span data-cell="1:X19" data-value="36600">36 600</span></td><td data-col="Y"><span data-cell="1:Y19" data-value="-">-</span></td><td data-col="AA"><span data-cell="1:AA19" data-value="-">-</span></td><td data-col="AB"><span data-cell="1:AB19" data-value="-">-</span></td></tr><tr class="mp-group"><th colspan="27"><span data-cell="1:C20" data-value="ИТОГО">ИТОГО</span> · Без НДС: <span data-cell="1:R20" data-value="2773692.2519764262">2 773 692,25</span> · АК: <span data-cell="1:W20" data-value="334730.45474112401">334 730,45</span> · С НДС и АК: <span data-cell="1:X20" data-value="4000000.0021523638">4 000 000</span> · Стоимость лида: <span data-cell="1:AA20" data-value="35398.230107543044">35 398,23</span> · Лидов: <span data-cell="1:AB20" data-value="113">113</span></th></tr></tbody></table><div class="mp-footer"><p><span data-cell="1:C23" data-value="Медиа-бюджет кампании после скидок (без НДС)">Медиа-бюджет кампании после скидок (без НДС)</span>: <span data-cell="1:E23" data-value="2773692.2519764262">2 773 692,25</span></p><p><span data-cell="1:C24" data-value="Комиссия агентства">Комиссия агентства</span>: <span data-cell="1:E24" data-value="334730.45474112401">334 730,45</span></p><p><span data-cell="1:C25" data-value="НДС на услуги">НДС на услуги</span>: <span data-cell="1:E25" data-value="0.22">22%</span></p><p><span data-cell="1:C26" data-value="Итого с учетом НДС">Итого с учетом НДС</span>: <span data-cell="1:E26" data-value="3383904.5474112397">3 383 904,55</span></p></div>
+</div>
+</section>
+<section class="slide r-wide r-mp" data-kicker="04 · медиаплан и бюджет" data-num="43 / 63" data-title="Контекстная реклама — полный план" data-mp-sheet="2">
+<h2 class="r-head">Контекстная реклама — полный план</h2>
+<p class="r-head-s">ЖК «Кинопарк» · октябрь · данные из Excel</p>
+<div class="mp-toolbar"><button type="button" data-mp-cols="B,E,H,I,J,K,L,M" aria-pressed="true">Кампании и прогноз</button><button type="button" data-mp-cols="B,A,C,D,E,F,G,N,O" aria-pressed="false">Форматы и бюджет</button></div>
+<div class="mp-scroll" tabindex="0" role="region" aria-label="Контекстная реклама — полный план: полная таблица">
+<table class="r-table mp-table"><thead><tr><th data-col="A" title="Рекламная площадка">Площадка</th><th data-col="B" title="Место размещения">Кампания / география</th><th data-col="C" title="Носитель рекламы">Носитель и формат</th><th data-col="D" title="Вид размещения">Модель оплаты</th><th data-col="E" title="Стоимость, руб. с НДС и ПМ">С НДС и ПМ, ₽</th><th data-col="F" title="Стоимость, руб. с НДС до ПМ">С НДС до ПМ, ₽</th><th data-col="G" title="Стоимость, руб. до  НДС">Без НДС, ₽</th><th data-col="H" title="Прогноз &#10;показов">Показы</th><th data-col="I" title="Прогноз CTR, %">CTR, %</th><th data-col="J" title="Прогноз кликов">Клики</th><th data-col="K" title="Прогноз&#10;CPC, руб.">CPC, ₽</th><th data-col="L" title="Прогноз обращений (звонки)">Обращения</th><th data-col="M" title="Прогноз &#10;CPA, руб. (звонки)">CPA, ₽</th><th data-col="N" title="Период размещения">Период</th><th data-col="O" title="Уточнение периода">Уточнение периода</th></tr></thead><tbody><tr><td data-col="A"><span data-cell="2:A3" data-value="Яндекс Директ">Яндекс Директ</span></td><td data-col="B"><span data-cell="2:B3" data-value="Поиск-Бренд &#10;СПб и ЛО">Поиск-Бренд <br>СПб и ЛО</span></td><td data-col="C"><span data-cell="2:C3" data-value="Текстовый блок  (56+81 символов)">Текстовый блок  (56+81 символов)</span></td><td data-col="D"><span data-cell="2:D3" data-value="динамика (СРС)">динамика (СРС)</span></td><td data-col="E" class="mp-number"><span data-cell="2:E3" data-value="536800">536 800</span></td><td data-col="F" class="mp-number"><span data-cell="2:F3" data-value="488000">488 000</span></td><td data-col="G" class="mp-number"><span data-cell="2:G3" data-value="400000">400 000</span></td><td data-col="H" class="mp-number"><span data-cell="2:H3" data-value="7500">7 500</span></td><td data-col="I" class="mp-number"><span data-cell="2:I3" data-value="0.12">12%</span></td><td data-col="J" class="mp-number"><span data-cell="2:J3" data-value="900">900</span></td><td data-col="K" class="mp-number"><span data-cell="2:K3" data-value="596.44444444444446">596,44</span></td><td data-col="L" class="mp-number"><span data-cell="2:L3" data-value="19">19</span></td><td data-col="M" class="mp-number"><span data-cell="2:M3" data-value="28252.63157894737">28 252,63</span></td><td data-col="N" class="mp-number"><span data-cell="2:N3" data-value="1">1</span></td><td data-col="O"><span data-cell="2:O3" data-value="месяц, ориентировочно по мере реализации">месяц, ориентировочно по мере реализации</span></td></tr><tr><td data-col="A"><span data-cell="2:A4" data-value="Яндекс Директ">Яндекс Директ</span></td><td data-col="B"><span data-cell="2:B4" data-value="Поиск-Бренд &#10;Регионы">Поиск-Бренд <br>Регионы</span></td><td data-col="C"><span data-cell="2:C4" data-value="Текстовый блок  (56+81 символов)">Текстовый блок  (56+81 символов)</span></td><td data-col="D"><span data-cell="2:D4" data-value="динамика (СРС)">динамика (СРС)</span></td><td data-col="E" class="mp-number"><span data-cell="2:E4" data-value="67100">67 100</span></td><td data-col="F" class="mp-number"><span data-cell="2:F4" data-value="61000">61 000</span></td><td data-col="G" class="mp-number"><span data-cell="2:G4" data-value="50000">50 000</span></td><td data-col="H" class="mp-number"><span data-cell="2:H4" data-value="1500.3750937734433">1 500,38</span></td><td data-col="I" class="mp-number"><span data-cell="2:I4" data-value="6.6650000000000001E-2">6,67%</span></td><td data-col="J" class="mp-number"><span data-cell="2:J4" data-value="100">100</span></td><td data-col="K" class="mp-number"><span data-cell="2:K4" data-value="671">671</span></td><td data-col="L" class="mp-number"><span data-cell="2:L4" data-value="2">2</span></td><td data-col="M" class="mp-number"><span data-cell="2:M4" data-value="33550">33 550</span></td><td data-col="N" class="mp-number"><span data-cell="2:N4" data-value="1">1</span></td><td data-col="O"><span data-cell="2:O4" data-value="месяц, ориентировочно по мере реализации">месяц, ориентировочно по мере реализации</span></td></tr><tr><td data-col="A"><span data-cell="2:A5" data-value="Яндекс Директ">Яндекс Директ</span></td><td data-col="B"><span data-cell="2:B5" data-value="Поиск-ГЕО&#10;СПб и ЛО">Поиск-ГЕО<br>СПб и ЛО</span></td><td data-col="C"><span data-cell="2:C5" data-value="Текстовый блок  (56+81 символов)">Текстовый блок  (56+81 символов)</span></td><td data-col="D"><span data-cell="2:D5" data-value="динамика (СРС)">динамика (СРС)</span></td><td data-col="E" class="mp-number"><span data-cell="2:E5" data-value="100650.00000000001">100 650</span></td><td data-col="F" class="mp-number"><span data-cell="2:F5" data-value="91500">91 500</span></td><td data-col="G" class="mp-number"><span data-cell="2:G5" data-value="75000">75 000</span></td><td data-col="H" class="mp-number"><span data-cell="2:H5" data-value="5000">5 000</span></td><td data-col="I" class="mp-number"><span data-cell="2:I5" data-value="0.02">2%</span></td><td data-col="J" class="mp-number"><span data-cell="2:J5" data-value="100">100</span></td><td data-col="K" class="mp-number"><span data-cell="2:K5" data-value="1006.5000000000001">1 006,50</span></td><td data-col="L" class="mp-number"><span data-cell="2:L5" data-value="2">2</span></td><td data-col="M" class="mp-number"><span data-cell="2:M5" data-value="50325.000000000007">50 325</span></td><td data-col="N" class="mp-number"><span data-cell="2:N5" data-value="1">1</span></td><td data-col="O"><span data-cell="2:O5" data-value="месяц, ориентировочно по мере реализации">месяц, ориентировочно по мере реализации</span></td></tr><tr><td data-col="A"><span data-cell="2:A6" data-value="Яндекс Директ">Яндекс Директ</span></td><td data-col="B"><span data-cell="2:B6" data-value="Поиск-Конкуренты &#10;СПб и ЛО">Поиск-Конкуренты <br>СПб и ЛО</span></td><td data-col="C"><span data-cell="2:C6" data-value="Текстовый блок  (56+81 символов)">Текстовый блок  (56+81 символов)</span></td><td data-col="D"><span data-cell="2:D6" data-value="динамика (СРС)">динамика (СРС)</span></td><td data-col="E" class="mp-number"><span data-cell="2:E6" data-value="100650.00000000001">100 650</span></td><td data-col="F" class="mp-number"><span data-cell="2:F6" data-value="91500">91 500</span></td><td data-col="G" class="mp-number"><span data-cell="2:G6" data-value="75000">75 000</span></td><td data-col="H" class="mp-number"><span data-cell="2:H6" data-value="10000">10 000</span></td><td data-col="I" class="mp-number"><span data-cell="2:I6" data-value="0.01">1%</span></td><td data-col="J" class="mp-number"><span data-cell="2:J6" data-value="100">100</span></td><td data-col="K" class="mp-number"><span data-cell="2:K6" data-value="1006.5000000000001">1 006,50</span></td><td data-col="L" class="mp-number"><span data-cell="2:L6" data-value="2">2</span></td><td data-col="M" class="mp-number"><span data-cell="2:M6" data-value="50325.000000000007">50 325</span></td><td data-col="N" class="mp-number"><span data-cell="2:N6" data-value="1">1</span></td><td data-col="O"><span data-cell="2:O6" data-value="месяц, ориентировочно по мере реализации">месяц, ориентировочно по мере реализации</span></td></tr><tr><td data-col="A"><span data-cell="2:A7" data-value="Яндекс Директ">Яндекс Директ</span></td><td data-col="B"><span data-cell="2:B7" data-value="РСЯ&#10;Комбинированная ТГБ &#10;СПб и ЛО &#10;(Бренд, ГЕО, конкуренты, общие, LAL, автотаргетинг, интересы)">РСЯ<br>Комбинированная ТГБ <br>СПб и ЛО <br>(Бренд, ГЕО, конкуренты, общие, LAL, автотаргетинг, интересы)</span></td><td data-col="C"><span data-cell="2:C7" data-value="Текстово-графический блок (56+81 символов, статика/видео), графические объявления (статика/динамика)">Текстово-графический блок (56+81 символов, статика/видео), графические объявления (статика/динамика)</span></td><td data-col="D"><span data-cell="2:D7" data-value="динамика (СРС)">динамика (СРС)</span></td><td data-col="E" class="mp-number"><span data-cell="2:E7" data-value="128163.80209600001">128 163,80</span></td><td data-col="F" class="mp-number"><span data-cell="2:F7" data-value="116512.54736">116 512,55</span></td><td data-col="G" class="mp-number"><span data-cell="2:G7" data-value="95502.088000000003">95 502,09</span></td><td data-col="H" class="mp-number"><span data-cell="2:H7" data-value="580000">580 000</span></td><td data-col="I" class="mp-number"><span data-cell="2:I7" data-value="5.0000000000000001E-3">0,5%</span></td><td data-col="J" class="mp-number"><span data-cell="2:J7" data-value="2900">2 900</span></td><td data-col="K" class="mp-number"><span data-cell="2:K7" data-value="44.194414515862071">44,19</span></td><td data-col="L" class="mp-number"><span data-cell="2:L7" data-value="5">5</span></td><td data-col="M" class="mp-number"><span data-cell="2:M7" data-value="25632.760419200004">25 632,76</span></td><td data-col="N" class="mp-number"><span data-cell="2:N7" data-value="1">1</span></td><td data-col="O"><span data-cell="2:O7" data-value="месяц, ориентировочно по мере реализации">месяц, ориентировочно по мере реализации</span></td></tr><tr><td data-col="A"><span data-cell="2:A8" data-value="Яндекс Директ">Яндекс Директ</span></td><td data-col="B"><span data-cell="2:B8" data-value="РСЯ&#10;Комбинированная баннеры &#10;СПб и ЛО &#10;(Бренд, ГЕО, конкуренты, общие, LAL, автотаргетинг, интересы)">РСЯ<br>Комбинированная баннеры <br>СПб и ЛО <br>(Бренд, ГЕО, конкуренты, общие, LAL, автотаргетинг, интересы)</span></td><td data-col="C"><span data-cell="2:C8" data-value="Текстово-графический блок (56+81 символов, статика/видео), графические объявления (статика/динамика)">Текстово-графический блок (56+81 символов, статика/видео), графические объявления (статика/динамика)</span></td><td data-col="D"><span data-cell="2:D8" data-value="динамика (СРС)">динамика (СРС)</span></td><td data-col="E" class="mp-number"><span data-cell="2:E8" data-value="67100">67 100</span></td><td data-col="F" class="mp-number"><span data-cell="2:F8" data-value="61000">61 000</span></td><td data-col="G" class="mp-number"><span data-cell="2:G8" data-value="50000">50 000</span></td><td data-col="H" class="mp-number"><span data-cell="2:H8" data-value="280000">280 000</span></td><td data-col="I" class="mp-number"><span data-cell="2:I8" data-value="5.0000000000000001E-3">0,5%</span></td><td data-col="J" class="mp-number"><span data-cell="2:J8" data-value="1400">1 400</span></td><td data-col="K" class="mp-number"><span data-cell="2:K8" data-value="47.928571428571431">47,93</span></td><td data-col="L" class="mp-number"><span data-cell="2:L8" data-value="1">1</span></td><td data-col="M" class="mp-number"><span data-cell="2:M8" data-value="67100">67 100</span></td><td data-col="N" class="mp-number"><span data-cell="2:N8" data-value="1">1</span></td><td data-col="O"><span data-cell="2:O8" data-value="месяц, ориентировочно по мере реализации">месяц, ориентировочно по мере реализации</span></td></tr><tr><td data-col="A"><span data-cell="2:A9" data-value="Яндекс Директ">Яндекс Директ</span></td><td data-col="B"><span data-cell="2:B9" data-value="РСЯ&#10;Комбинированная ТГБ &#10;Регионы&#10;(Бренд, ГЕО, конкуренты, общие, LAL, автотаргетинг)">РСЯ<br>Комбинированная ТГБ <br>Регионы<br>(Бренд, ГЕО, конкуренты, общие, LAL, автотаргетинг)</span></td><td data-col="C"><span data-cell="2:C9" data-value="Текстово-графический блок (56+81 символов, статика/видео), графические объявления (статика/динамика)">Текстово-графический блок (56+81 символов, статика/видео), графические объявления (статика/динамика)</span></td><td data-col="D"><span data-cell="2:D9" data-value="динамика (СРС)">динамика (СРС)</span></td><td data-col="E" class="mp-number"><span data-cell="2:E9" data-value="67100">67 100</span></td><td data-col="F" class="mp-number"><span data-cell="2:F9" data-value="61000">61 000</span></td><td data-col="G" class="mp-number"><span data-cell="2:G9" data-value="50000">50 000</span></td><td data-col="H" class="mp-number"><span data-cell="2:H9" data-value="280000">280 000</span></td><td data-col="I" class="mp-number"><span data-cell="2:I9" data-value="5.0000000000000001E-3">0,5%</span></td><td data-col="J" class="mp-number"><span data-cell="2:J9" data-value="1400">1 400</span></td><td data-col="K" class="mp-number"><span data-cell="2:K9" data-value="47.928571428571431">47,93</span></td><td data-col="L" class="mp-number"><span data-cell="2:L9" data-value="2">2</span></td><td data-col="M" class="mp-number"><span data-cell="2:M9" data-value="33550">33 550</span></td><td data-col="N" class="mp-number"><span data-cell="2:N9" data-value="1">1</span></td><td data-col="O"><span data-cell="2:O9" data-value="месяц, ориентировочно по мере реализации">месяц, ориентировочно по мере реализации</span></td></tr><tr><td data-col="A"><span data-cell="2:A10" data-value="Яндекс Директ">Яндекс Директ</span></td><td data-col="B"><span data-cell="2:B10" data-value="РСЯ&#10;Ретаргетинг &#10;РФ">РСЯ<br>Ретаргетинг <br>РФ</span></td><td data-col="C"><span data-cell="2:C10" data-value="Текстово-графический блок (56+81 символов, статика/видео), графические объявления (статика/динамика)">Текстово-графический блок (56+81 символов, статика/видео), графические объявления (статика/динамика)</span></td><td data-col="D"><span data-cell="2:D10" data-value="динамика (СРС)">динамика (СРС)</span></td><td data-col="E" class="mp-number"><span data-cell="2:E10" data-value="93940.000000000015">93 940</span></td><td data-col="F" class="mp-number"><span data-cell="2:F10" data-value="85400">85 400</span></td><td data-col="G" class="mp-number"><span data-cell="2:G10" data-value="70000">70 000</span></td><td data-col="H" class="mp-number"><span data-cell="2:H10" data-value="388400">388 400</span></td><td data-col="I" class="mp-number"><span data-cell="2:I10" data-value="5.0000000000000001E-3">0,5%</span></td><td data-col="J" class="mp-number"><span data-cell="2:J10" data-value="1942">1 942</span></td><td data-col="K" class="mp-number"><span data-cell="2:K10" data-value="48.372811534500521">48,37</span></td><td data-col="L" class="mp-number"><span data-cell="2:L10" data-value="3">3</span></td><td data-col="M" class="mp-number"><span data-cell="2:M10" data-value="31313.333333333339">31 313,33</span></td><td data-col="N" class="mp-number"><span data-cell="2:N10" data-value="1">1</span></td><td data-col="O"><span data-cell="2:O10" data-value="месяц, ориентировочно по мере реализации">месяц, ориентировочно по мере реализации</span></td></tr><tr><td data-col="A"><span data-cell="2:A11" data-value="Яндекс Директ">Яндекс Директ</span></td><td data-col="B"><span data-cell="2:B11" data-value="РСЯ&#10;Товарная РК&#10;СПб и ЛО">РСЯ<br>Товарная РК<br>СПб и ЛО</span></td><td data-col="C"><span data-cell="2:C11" data-value="Текстово-графический блок (56+81 символов, статика/видео), графические объявления (статика/динамика)">Текстово-графический блок (56+81 символов, статика/видео), графические объявления (статика/динамика)</span></td><td data-col="D"><span data-cell="2:D11" data-value="динамика (СРС)">динамика (СРС)</span></td><td data-col="E" class="mp-number"><span data-cell="2:E11" data-value="40260">40 260</span></td><td data-col="F" class="mp-number"><span data-cell="2:F11" data-value="36600">36 600</span></td><td data-col="G" class="mp-number"><span data-cell="2:G11" data-value="30000">30 000</span></td><td data-col="H" class="mp-number"><span data-cell="2:H11" data-value="160000">160 000</span></td><td data-col="I" class="mp-number"><span data-cell="2:I11" data-value="5.0000000000000001E-3">0,5%</span></td><td data-col="J" class="mp-number"><span data-cell="2:J11" data-value="800">800</span></td><td data-col="K" class="mp-number"><span data-cell="2:K11" data-value="50.325000000000003">50,33</span></td><td data-col="L" class="mp-number"><span data-cell="2:L11" data-value="1">1</span></td><td data-col="M" class="mp-number"><span data-cell="2:M11" data-value="40260">40 260</span></td><td data-col="N" class="mp-number"><span data-cell="2:N11" data-value="1">1</span></td><td data-col="O"><span data-cell="2:O11" data-value="месяц, ориентировочно по мере реализации">месяц, ориентировочно по мере реализации</span></td></tr><tr><td data-col="A"><span data-cell="2:A12" data-value="Яндекс Директ">Яндекс Директ</span></td><td data-col="B"><span data-cell="2:B12" data-value="Телеграм-каналы&#10;СПб и ЛО&#10;Таргетинг по тематике каналов">Телеграм-каналы<br>СПб и ЛО<br>Таргетинг по тематике каналов</span></td><td data-col="C"><span data-cell="2:C12" data-value="Текстово-графический блок">Текстово-графический блок</span></td><td data-col="D"><span data-cell="2:D12" data-value="динамика (СРС)">динамика (СРС)</span></td><td data-col="E" class="mp-number"><span data-cell="2:E12" data-value="342210">342 210</span></td><td data-col="F" class="mp-number"><span data-cell="2:F12" data-value="311100">311 100</span></td><td data-col="G" class="mp-number"><span data-cell="2:G12" data-value="255000">255 000</span></td><td data-col="H" class="mp-number"><span data-cell="2:H12" data-value="566666.66666666663">566 666,67</span></td><td data-col="I" class="mp-number"><span data-cell="2:I12" data-value="1.5E-3">0,15%</span></td><td data-col="J" class="mp-number"><span data-cell="2:J12" data-value="850">850</span></td><td data-col="K" class="mp-number"><span data-cell="2:K12" data-value="402.6">402,60</span></td><td data-col="L" class="mp-number"><span data-cell="2:L12" data-value="10">10</span></td><td data-col="M" class="mp-number"><span data-cell="2:M12" data-value="34221">34 221</span></td><td data-col="N" class="mp-number"><span data-cell="2:N12" data-value="1">1</span></td><td data-col="O"><span data-cell="2:O12" data-value="месяц, ориентировочно по мере реализации">месяц, ориентировочно по мере реализации</span></td></tr><tr><td data-col="A"><span data-cell="2:A13" data-value="Яндекс Директ">Яндекс Директ</span></td><td data-col="B"><span data-cell="2:B13" data-value="МКБ&#10;СПб и ЛО&#10;Бренд, конкуренты">МКБ<br>СПб и ЛО<br>Бренд, конкуренты</span></td><td data-col="C"><span data-cell="2:C13" data-value="Гграфические объявления (статика/динамика)">Гграфические объявления (статика/динамика)</span></td><td data-col="D"><span data-cell="2:D13" data-value="динамика (СРС)">динамика (СРС)</span></td><td data-col="E" class="mp-number"><span data-cell="2:E13" data-value="13420.000000000002">13 420</span></td><td data-col="F" class="mp-number"><span data-cell="2:F13" data-value="12200">12 200</span></td><td data-col="G" class="mp-number"><span data-cell="2:G13" data-value="10000">10 000</span></td><td data-col="H" class="mp-number"><span data-cell="2:H13" data-value="3333.3333333333335">3 333,33</span></td><td data-col="I" class="mp-number"><span data-cell="2:I13" data-value="3.0000000000000001E-3">0,3%</span></td><td data-col="J" class="mp-number"><span data-cell="2:J13" data-value="10">10</span></td><td data-col="K" class="mp-number"><span data-cell="2:K13" data-value="1342.0000000000002">1 342</span></td><td data-col="L"><span data-cell="2:L13" data-value="-">-</span></td><td data-col="M"><span data-cell="2:M13" data-value="-">-</span></td><td data-col="N" class="mp-number"><span data-cell="2:N13" data-value="1">1</span></td><td data-col="O"><span data-cell="2:O13" data-value="месяц, ориентировочно по мере реализации">месяц, ориентировочно по мере реализации</span></td></tr><tr><td data-col="A"><span data-cell="2:A14" data-value="Итого">Итого</span></td><td data-col="B"><span data-cell="2:B14" data-value="">—</span></td><td data-col="C"><span data-cell="2:C14" data-value="">—</span></td><td data-col="D"><span data-cell="2:D14" data-value="">—</span></td><td data-col="E" class="mp-number"><span data-cell="2:E14" data-value="1557393.8020959999">1 557 393,80</span></td><td data-col="F" class="mp-number"><span data-cell="2:F14" data-value="1415812.54736">1 415 812,55</span></td><td data-col="G" class="mp-number"><span data-cell="2:G14" data-value="1160502.088">1 160 502,09</span></td><td data-col="H" class="mp-number"><span data-cell="2:H14" data-value="2282400.3750937735">2 282 400,38</span></td><td data-col="I" class="mp-number"><span data-cell="2:I14" data-value="3.0000000000000001E-3">0,3%</span></td><td data-col="J" class="mp-number"><span data-cell="2:J14" data-value="10502">10 502</span></td><td data-col="K" class="mp-number"><span data-cell="2:K14" data-value="148.29497258579318">148,29</span></td><td data-col="L" class="mp-number"><span data-cell="2:L14" data-value="47">47</span></td><td data-col="M" class="mp-number"><span data-cell="2:M14" data-value="33136.038342468084">33 136,04</span></td><td data-col="N" class="mp-number"><span data-cell="2:N14" data-value="1">1</span></td><td data-col="O"><span data-cell="2:O14" data-value="месяц, ориентировочно по мере реализации">месяц, ориентировочно по мере реализации</span></td></tr></tbody></table>
+</div>
+</section>
+    <section class="slide r-wide r-budget" data-kicker="04 · медиаплан и бюджет" data-num="44 / 63" data-title="Бюджет на октябрь">
       <h2 class="r-head">Бюджет на&nbsp;октябрь</h2>
       <p class="r-head-s">Каналы и&nbsp;бюджет на&nbsp;месяц</p>
       <table class="r-table">
@@ -1582,12 +1602,12 @@ html{ font-size: calc(100vw / 22.5); }
       <div class="r-budget-total"><p class="r-k">итого за октябрь</p><p class="r-budget-value">4&#8239;000&#8239;000&nbsp;₽</p></div>
       <p class="r-budget-source">Источник: расчёт Digital M, октябрь 2026</p>
     </section>
-    <section class="slide r-year" data-kicker="04 · медиаплан и бюджет" data-num="44 / 62" data-title="Медиатактика в разрезе года">
+    <section class="slide r-year" data-kicker="04 · медиаплан и бюджет" data-num="45 / 63" data-title="Медиатактика в разрезе года">
       <h2 class="r-head">Медиатактика в&nbsp;разрезе года</h2>
       <p class="r-year-p">Мы подготовили прогнозный расчёт на&nbsp;год с&nbsp;целевыми лидами и&nbsp;CPA. Однако важно учитывать, что дать точный прогноз на&nbsp;год вперёд сейчас крайне сложно из-за внешних факторов. Рынок недвижимости высококонкурентный, аукционы и&nbsp;алгоритмы площадок меняются ежедневно.</p>
       <p class="r-year-p r-year-p2">Поэтому мы рекомендуем делать пересчёт медиатактики, чтобы учитывать динамику изменений, оценивать эффективность каждого канала и&nbsp;при необходимости перераспределять бюджет в&nbsp;пользу инструментов, которые покажут лучший результат.</p>
     </section>
-    <section class="slide r-wide r-rdc" data-kicker="04 · медиаплан и бюджет" data-num="45 / 62" data-title="Расчёт договорной цены">
+    <section class="slide r-wide r-rdc" data-kicker="04 · медиаплан и бюджет" data-num="46 / 63" data-title="Расчёт договорной цены">
       <h2 class="r-head">Расчёт договорной цены</h2>
       <p class="r-head-s">ЖК «Кинопарк» · октябрь 2026&nbsp;— сентябрь 2027 · ₽ за&nbsp;целевое обращение (ЦО) и&nbsp;число ЦО</p>
       <table class="r-table r-rdc-a">
@@ -1603,13 +1623,13 @@ html{ font-size: calc(100vw / 22.5); }
       </table>
       <p class="r-rdc-key"><span>28&#8239;300</span> ₽ за&nbsp;ЦО <span class="q">44</span> число ЦО</p>
     </section>
-    <section class="slide r-div" data-kicker="05 · отчётность" data-num="46 / 62" data-sec="05" data-menu="ОТЧЁТНОСТЬ" data-title="Отчётность · обложка">
+    <section class="slide r-div" data-kicker="05 · отчётность" data-num="47 / 63" data-sec="05" data-menu="ОТЧЁТНОСТЬ" data-title="Отчётность · обложка">
       <figure class="r-div-bg"><img src="rsti/img/kp-facade.jpg" alt="Фасад ЖК «Кинопарк»"></figure>
       <p class="r-num">05</p>
       <h2 class="r-div-t">Отчётность</h2>
       <p class="r-div-s">Дашборд&nbsp;М, HTML-отчёты, анализ креативов, работа с&nbsp;фродом и&nbsp;арбитраж звонков с&nbsp;баз недвижимости</p>
     </section>
-    <section class="slide r-shot r-shot-wide" data-kicker="05 · отчётность" data-num="47 / 62" data-title="Дашборд М">
+    <section class="slide r-shot r-shot-wide" data-kicker="05 · отчётность" data-num="48 / 63" data-title="Дашборд М">
       <h2 class="r-head r-lock">Dashboard<svg class="r-lock-m" viewBox="2610 224 1064 1120" aria-hidden="true"><path d="M3674 224H2610V1344H3674V224Z" fill="#E0622C"/><path d="M2834 448L3142 946.355L3065.06 1070.94L2988.04 946.355V1120H2834V448Z" fill="#211E1B"/><path d="M3450 448L3142 946.355L3219 1070.94L3295.99 946.355V1120H3450V448Z" fill="#211E1B"/></svg></h2>
       <figure class="r-sh-img"><img src="rsti/img/dashboard-m.jpg" alt="Дашборд М: расход, лиды, CPA"></figure>
       <div class="r-sh-text">
@@ -1617,7 +1637,7 @@ html{ font-size: calc(100vw / 22.5); }
         <p class="r-p">Обновляется ежедневно: всегда актуальная картина, а&nbsp;не&nbsp;данные месячной давности. Отклонения видно сразу, решение принимается до&nbsp;того, как бюджет будет слит.</p>
       </div>
     </section>
-    <section class="slide r-shot r-shot-side" data-kicker="05 · отчётность" data-num="48 / 62" data-title="HTML-отчёты">
+    <section class="slide r-shot r-shot-side" data-kicker="05 · отчётность" data-num="49 / 63" data-title="HTML-отчёты">
       <h2 class="r-head">HTML-отчёты</h2>
       <div class="r-sh-text">
         <p class="r-p">Оформленный отчёт заменяет еженедельные и&nbsp;ежемесячные срезы в&nbsp;таблицах и&nbsp;презентациях.</p>
@@ -1625,7 +1645,7 @@ html{ font-size: calc(100vw / 22.5); }
       </div>
       <figure class="r-sh-img"><img src="rsti/img/html-report.jpg" alt="HTML-отчёт о продвижении"></figure>
     </section>
-    <section class="slide r-fraud" data-kicker="05 · отчётность" data-num="49 / 62" data-title="Фрод и арбитраж звонков">
+    <section class="slide r-fraud" data-kicker="05 · отчётность" data-num="50 / 63" data-title="Фрод и арбитраж звонков">
       <h2 class="r-head">Работа с&nbsp;фродом и&nbsp;арбитраж</h2>
       <div class="r-fr-pair">
         <div><h3>Работа с&nbsp;фродом</h3>
@@ -1637,13 +1657,13 @@ html{ font-size: calc(100vw / 22.5); }
           <p class="r-fig"><b>~700&#8239;000&nbsp;руб.</b><span>в&nbsp;месяц&nbsp;— средняя экономия по&nbsp;этому направлению</span></p></div>
       </div>
     </section>
-    <section class="slide r-div" data-kicker="06 · кейсы" data-num="50 / 62" data-sec="06" data-menu="КЕЙСЫ" data-title="Кейсы · обложка">
+    <section class="slide r-div" data-kicker="06 · кейсы" data-num="51 / 63" data-sec="06" data-menu="КЕЙСЫ" data-title="Кейсы · обложка">
       <figure class="r-div-bg"><img src="rsti/img/kp-facade-2.jpg" alt="Фасад ЖК «Кинопарк»"></figure>
       <p class="r-num">06</p>
       <h2 class="r-div-t">Кейсы<br>команды</h2>
       <p class="r-div-s">Гордимся нашим опытом</p>
     </section>
-    <section class="slide m3 flip" data-kicker="06 · кейсы" data-num="51 / 62" data-title="МФК SAAN">
+    <section class="slide m3 flip" data-kicker="06 · кейсы" data-num="52 / 63" data-title="МФК SAAN">
       <figure class="s-photo"><img src="rsti/img/case-saan.jpg" alt="МФК SAAN"></figure>
       <div class="s-col">
         <div class="s-head">
@@ -1664,7 +1684,7 @@ html{ font-size: calc(100vw / 22.5); }
       </div>
       <p class="s-note">источник: внутренняя аналитика проекта</p>
     </section>
-    <section class="slide m3 flip" data-kicker="06 · кейсы" data-num="52 / 62" data-title="Брусника × Чижик-Пыжик">
+    <section class="slide m3 flip" data-kicker="06 · кейсы" data-num="53 / 63" data-title="Брусника × Чижик-Пыжик">
       <figure class="s-photo"><img src="rsti/img/case-brusnika.jpg" alt="Брусника: табличка у Чижика-Пыжика"></figure>
       <div class="s-col">
         <div class="s-head">
@@ -1682,7 +1702,7 @@ html{ font-size: calc(100vw / 22.5); }
         </ol>
       </div>
     </section>
-    <section class="slide m3 flip r-case-okla" data-kicker="06 · кейсы" data-num="53 / 62" data-title="Ленстройтрест · Окла Вижн">
+    <section class="slide m3 flip r-case-okla" data-kicker="06 · кейсы" data-num="54 / 63" data-title="Ленстройтрест · Окла Вижн">
       <figure class="s-photo"><img src="rsti/img/case-okla-render.jpg" alt="Окла Вижн: две башни на закате"></figure>
       <div class="s-col">
         <div class="s-head">
@@ -1693,7 +1713,7 @@ html{ font-size: calc(100vw / 22.5); }
         <p class="s-body s-body-2">Формат бренд-штурмов потом вынесли в&nbsp;отдельную услугу агентства.</p>
       </div>
     </section>
-    <section class="slide m3 flip r-case-baza" data-kicker="06 · кейсы" data-num="54 / 62" data-title="BAZA Bali">
+    <section class="slide m3 flip r-case-baza" data-kicker="06 · кейсы" data-num="55 / 63" data-title="BAZA Bali">
       <figure class="s-photo"><img src="rsti/img/case-baza.jpg" alt="Вилла BAZA Bali"></figure>
       <div class="s-col">
         <div class="s-head">
@@ -1707,7 +1727,7 @@ html{ font-size: calc(100vw / 22.5); }
         </ol>
       </div>
     </section>
-    <section class="slide m3 flip r-case-v r-cv-defans" data-kicker="06 · кейсы" data-num="55 / 62" data-title="ЖК «Дефанс»">
+    <section class="slide m3 flip r-case-v r-cv-defans" data-kicker="06 · кейсы" data-num="56 / 63" data-title="ЖК «Дефанс»">
       <figure class="s-photo"><img src="rsti/img/case-defans-1410c.jpg" alt="ЖК «Дефанс»: дом, фото"></figure>
       <div class="s-col">
         <div class="s-head">
@@ -1723,7 +1743,7 @@ html{ font-size: calc(100vw / 22.5); }
       </div>
       <p class="s-note">«Лидер Групп» · 2022–2023</p>
     </section>
-    <section class="slide m3 flip r-case-v r-cv-glorax-zan" data-kicker="06 · кейсы" data-num="56 / 62" data-title="GloraX Заневский">
+    <section class="slide m3 flip r-case-v r-cv-glorax-zan" data-kicker="06 · кейсы" data-num="57 / 63" data-title="GloraX Заневский">
       <figure class="s-photo"><img src="rsti/img/case-glorax-zan-1410b.jpg" alt="GloraX Заневский: рендер"></figure>
       <div class="s-col">
         <div class="s-head">
@@ -1738,7 +1758,7 @@ html{ font-size: calc(100vw / 22.5); }
       </div>
       <p class="s-note">GloraX · 2022 — по&nbsp;н.&nbsp;в.</p>
     </section>
-    <section class="slide m3 flip r-case-v r-cv-legenda10" data-kicker="06 · кейсы" data-num="57 / 62" data-title="LEGENDA · 10 лет">
+    <section class="slide m3 flip r-case-v r-cv-legenda10" data-kicker="06 · кейсы" data-num="58 / 63" data-title="LEGENDA · 10 лет">
       <figure class="s-photo"><img src="rsti/img/case-legenda-10-1410b.jpg" alt="LEGENDA: парадный вход"></figure>
       <div class="s-col">
         <div class="s-head">
@@ -1757,7 +1777,7 @@ html{ font-size: calc(100vw / 22.5); }
       </div>
       <p class="s-note">LEGENDA Development · 2021–2023</p>
     </section>
-    <section class="slide m3 flip r-case-v r-cv-legenda-geroev" data-kicker="06 · кейсы" data-num="58 / 62" data-title="Legenda Героев">
+    <section class="slide m3 flip r-case-v r-cv-legenda-geroev" data-kicker="06 · кейсы" data-num="59 / 63" data-title="Legenda Героев">
       <figure class="s-photo"><img src="rsti/img/case-legenda-geroev-1410.jpg" alt="Legenda Героев: башни на закате"></figure>
       <div class="s-col">
         <div class="s-head">
@@ -1778,7 +1798,7 @@ html{ font-size: calc(100vw / 22.5); }
       </div>
       <p class="s-note">LEGENDA Development · кейс 1</p>
     </section>
-    <section class="slide m3 flip r-case-v r-cv-sosnovka" data-kicker="06 · кейсы" data-num="59 / 62" data-title="ЖК «Сосновка»">
+    <section class="slide m3 flip r-case-v r-cv-sosnovka" data-kicker="06 · кейсы" data-num="60 / 63" data-title="ЖК «Сосновка»">
       <figure class="s-photo"><img src="rsti/img/case-sosnovka-1410b.jpg" alt="ЖК «Сосновка»: двор"></figure>
       <div class="s-col">
         <div class="s-head">
@@ -1795,7 +1815,7 @@ html{ font-size: calc(100vw / 22.5); }
       </div>
       <p class="s-note">«Строительный Трест» · 2020–2021</p>
     </section>
-    <section class="slide m3 flip r-case-v r-cv-glorax-prem" data-kicker="06 · кейсы" data-num="60 / 62" data-title="GloraX Premium Василеостровский">
+    <section class="slide m3 flip r-case-v r-cv-glorax-prem" data-kicker="06 · кейсы" data-num="61 / 63" data-title="GloraX Premium Василеостровский">
       <figure class="s-photo"><img src="rsti/img/case-glorax-prem-1410b.jpg" alt="GloraX Premium Василеостровский: башня"></figure>
       <div class="s-col">
         <div class="s-head">
@@ -1812,7 +1832,7 @@ html{ font-size: calc(100vw / 22.5); }
       </div>
       <p class="s-note">GloraX · 2021 — по&nbsp;н.&nbsp;в.</p>
     </section>
-    <section class="slide m3 flip r-case-v r-cv-yes" data-kicker="06 · кейсы" data-num="61 / 62" data-title="YE’S LEADER">
+    <section class="slide m3 flip r-case-v r-cv-yes" data-kicker="06 · кейсы" data-num="62 / 63" data-title="YE’S LEADER">
       <figure class="s-photo"><img src="rsti/img/case-yes-leader-1410c.jpg" alt="YE’S LEADER: фасад апарт-отеля"></figure>
       <div class="s-col">
         <div class="s-head">
@@ -1828,7 +1848,7 @@ html{ font-size: calc(100vw / 22.5); }
       </div>
       <p class="s-note">«Лидер Групп» · 2022 — по&nbsp;н.&nbsp;в.</p>
     </section>
-    <section class="slide m3 flip r-case-v r-cv-familia" data-kicker="06 · кейсы" data-num="62 / 62" data-title="ЖК FAMILIA">
+    <section class="slide m3 flip r-case-v r-cv-familia" data-kicker="06 · кейсы" data-num="63 / 63" data-title="ЖК FAMILIA">
       <figure class="s-photo"><img src="rsti/img/case-familia-1410b.jpg" alt="ЖК FAMILIA: фасад"></figure>
       <div class="s-col">
         <div class="s-head">
@@ -1843,7 +1863,7 @@ html{ font-size: calc(100vw / 22.5); }
       </div>
       <p class="s-note">РСТИ · 2020–2023</p>
     </section>
-    <script type="application/json" id="deck-menu">{"sections": [{"label": "ОБ АГЕНТСТВЕ", "from": 2}, {"label": "РЫНОК И КОНКУРЕНТЫ", "from": 11}, {"label": "АУДИТОРИЯ", "from": 17}, {"label": "СТРАТЕГИЯ", "from": 33}, {"label": "МЕДИАПЛАН И БЮДЖЕТ", "from": 41}, {"label": "ОТЧЁТНОСТЬ", "from": 46}, {"label": "КЕЙСЫ", "from": 50}], "links": [{"label": "В НАЧАЛО", "to": 1}]}</script><script>(() => { const vids = [...document.querySelectorAll('.slide video')]; vids.forEach((v) => v.removeAttribute('autoplay'));
+    <script type="application/json" id="deck-menu">{"sections": [{"label": "ОБ АГЕНТСТВЕ", "from": 2}, {"label": "РЫНОК И КОНКУРЕНТЫ", "from": 11}, {"label": "АУДИТОРИЯ", "from": 17}, {"label": "СТРАТЕГИЯ", "from": 33}, {"label": "МЕДИАПЛАН И БЮДЖЕТ", "from": 41}, {"label": "ОТЧЁТНОСТЬ", "from": 47}, {"label": "КЕЙСЫ", "from": 51}], "links": [{"label": "В НАЧАЛО", "to": 1}]}</script><script>(() => { const vids = [...document.querySelectorAll('.slide video')]; vids.forEach((v) => v.removeAttribute('autoplay'));
   const sync = () => vids.forEach((v) => { const on = v.closest('.slide').classList.contains('on');
     if (!on) { v.pause(); v.dataset.tries = ''; return; }
     if (!v.paused) return; if (!v.dataset.tries) v.currentTime = 0;
@@ -2031,6 +2051,34 @@ html{ font-size: calc(100vw / 22.5); }
   let was = false;
   const sync = () => { const now = slide.classList.contains('on'); if (now && !was) { on(0); draw(); } was = now; };
   document.addEventListener('deck:slide', sync); sync();
+  });
+})();
+</script><script>
+(() => {
+  document.querySelectorAll('.r-mp').forEach(slide => {
+    const buttons = [...slide.querySelectorAll('[data-mp-cols]')];
+    const scroll = slide.querySelector('.mp-scroll');
+    const select = button => {
+      const order = button.dataset.mpCols.split(',');
+      const columns = new Set(order);
+      buttons.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+      slide.querySelectorAll('[data-col]').forEach(cell => {
+        cell.hidden = !columns.has(cell.dataset.col);
+        cell.classList.toggle('mp-key', cell.dataset.col === order[0]);
+      });
+      slide.querySelectorAll('.mp-table tr:not(.mp-group)').forEach(row => {
+        [...row.children].sort((a,b) => {
+          const ai = order.indexOf(a.dataset.col), bi = order.indexOf(b.dataset.col);
+          return (ai < 0 ? 100 : ai) - (bi < 0 ? 100 : bi);
+        }).forEach(cell => row.appendChild(cell));
+      });
+      slide.querySelectorAll('.mp-group th').forEach(cell => { cell.colSpan = columns.size; });
+      scroll.scrollTop = 0; scroll.scrollLeft = 0;
+    };
+    buttons.forEach(button => button.addEventListener('click', () => select(button)));
+    scroll.addEventListener('wheel', event => event.stopPropagation(), { passive: true });
+    scroll.addEventListener('keydown', event => event.stopPropagation());
+    select(buttons[0]);
   });
 })();
 </script>
