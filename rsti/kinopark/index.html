@@ -574,8 +574,39 @@ html{ font-size: min(calc(100vw / 120), calc(100vh / 67.5)); }
 .r-ca .r-ca-right{ position:absolute; left:var(--c8); top:15.375rem; width:37rem; padding-top:1.25rem; }
 .r-ca .r-ca-right .r-list{ padding-top:0; }
 .r-ca .r-ca-bar{ margin-top:2rem; }
-.r-ca-expanded .r-ca-photo{ height:15rem; }
-.r-ca-expanded .r-ca-prof{ font-size:1.125rem; line-height:1.75rem; }
+.r-ca-timed .r-ca-copy{ position:absolute; left:var(--c4); top:15.375rem; width:27rem; }
+.r-ca-timed .r-ca-text, .r-ca-timed .r-ca-right{ position:static; width:auto; padding:0; }
+.r-ca-timed .r-ca-right{ margin-top:.75rem; }
+.r-ca-timed .r-ca-prof, .r-ca-timed .r-p, .r-ca-timed .r-list li{ font-size:1rem; line-height:1.5rem; }
+.r-ca-timed .r-k{ margin-bottom:.375rem; font-size:.8125rem; line-height:1.25rem; }
+.r-ca-timed .r-list li{ padding:.25rem 0; grid-template-columns:2rem 1fr; }
+.r-ca-timed .r-list .r-n{ font-size:.8125rem; }
+.r-ca-timed .r-ca-bar{ margin-top:.75rem; }
+.r-ca-timed .r-p{ margin-bottom:.5rem; }
+.r-ca-time{ position:absolute; left:60.75rem; top:15.375rem; width:57rem; margin:0; display:grid; grid-template-columns:25rem 30rem; gap:2rem; }
+.at-ring{ padding-top:3rem; }
+.at-ring svg{ display:block; width:100%; overflow:visible; }
+.at-sector{ cursor:pointer; stroke:var(--paper); stroke-width:.4; transition:fill .15s, opacity .15s; }
+.at-tone-0, .at-tone-6{ fill:var(--g1); }
+.at-tone-1, .at-tone-4{ fill:var(--g3); }
+.at-tone-2{ fill:var(--terra); }
+.at-tone-3, .at-tone-5{ fill:var(--g5); }
+.at-tone-7{ fill:var(--ash); stroke-dasharray:1 1; }
+.at-sector.is-active{ fill:var(--terra); stroke:var(--ink); stroke-width:.6; }
+.at-sector:focus-visible{ outline:none; stroke:var(--ink); stroke-width:1; }
+.at-hour{ font-family:"IBM Plex Mono",monospace; font-size:3px; fill:var(--bark); }
+.at-center-label{ font-family:"IBM Plex Sans",sans-serif; font-size:3px; fill:var(--bark); }
+.at-center-value{ font-family:"Viaoda Libre",Georgia,serif; font-size:5px; fill:var(--ink); }
+.at-caption{ margin:1rem 1rem 0; font-family:"IBM Plex Sans",sans-serif; font-size:.8125rem; line-height:1.25rem; color:var(--bark); }
+.at-list{ display:flex; flex-direction:column; }
+.at-row{ appearance:none; display:grid; grid-template-columns:1fr 1fr; gap:.25rem .75rem; background:none; color:inherit; border:0; border-top:1px solid var(--ash); padding:.625rem 0; text-align:left; cursor:pointer; }
+.at-time{ grid-column:1 / -1; font-family:"Viaoda Libre",Georgia,serif; font-size:1.5rem; line-height:1.75rem; }
+.at-activity, .at-channels{ font-family:"IBM Plex Sans",sans-serif; font-size:.8125rem; line-height:1.125rem; }
+.at-channels{ border-left:1px solid var(--ash); padding-left:.75rem; color:var(--bark); }
+.at-row.is-active{ box-shadow:inset .1875rem 0 0 var(--terra); padding-left:.75rem; }
+.at-row.is-active .at-time{ color:var(--terra); }
+.at-row:focus-visible{ outline:1px solid var(--terra); outline-offset:.125rem; }
+@media (prefers-reduced-motion:reduce){ .at-sector{ transition:none; } }
 .r-budget .r-table{ width:42rem; font-size:1.125rem; line-height:1.75rem; }
 .r-budget .r-table td, .r-budget .r-table tbody th{ padding:1rem .75rem; }
 .r-budget .r-plot{ position:absolute; left:75.75rem; top:19.25rem; width:42rem; height:35rem; }
@@ -1214,10 +1245,11 @@ html{ font-size: calc(100vw / 22.5); }
       <h2 class="r-div-t">Аудитория</h2>
       <p class="r-div-s">Кто покупает ЖК&nbsp;«Кинопарк»</p>
     </section>
-    <section class="slide r-ca" data-kicker="02 · аудитория" data-num="18 / 59" data-title="Молодые семьи и холостые">
+    <section class="slide r-ca r-ca-timed" data-kicker="02 · аудитория" data-num="18 / 59" data-title="Молодые семьи и холостые">
       <h2 class="r-head">Молодые семьи и&nbsp;холостые</h2>
+      <div class="r-ca-time" data-audience-time="young" aria-label="Время молодых семей и холостых"></div>
+      <div class="r-ca-copy">
       <div class="r-ca-text">
-        <figure class="r-ca-photo"><img src="rsti/img/ca-molodye-semi.png" alt="Молодая пара дома"></figure>
         <p class="r-k">профиль</p>
         <p class="r-ca-prof">25–35 лет, без детей, покупают первую квартиру. Работают в&nbsp;офисе или на&nbsp;удалёнке, доход средний или выше среднего, нередко с&nbsp;поддержкой родителей. Ценят современный ритм жизни, мобильность, общение и&nbsp;активный досуг.</p>
       </div>
@@ -1236,6 +1268,7 @@ html{ font-size: calc(100vw / 22.5); }
           <p class="r-p">МЖ от&nbsp;25&nbsp;лет или родители от&nbsp;45&nbsp;лет.</p>
         </div>
       </div>
+      </div>
     </section>
     <section class="slide r-visual" data-kicker="02 · аудитория" data-num="19 / 59" data-title="Визуалы — молодые семьи">
       <h2 class="r-head">Визуалы для ЦА — молодые семьи</h2>
@@ -1252,10 +1285,11 @@ html{ font-size: calc(100vw / 22.5); }
         <img src="rsti/img/audience-0911/slide-4-2.png" alt="Рекламный визуал для холостых 2">
       </div>
     </section>
-    <section class="slide r-ca" data-kicker="02 · аудитория" data-num="21 / 59" data-title="Семьи с детьми">
+    <section class="slide r-ca r-ca-timed" data-kicker="02 · аудитория" data-num="21 / 59" data-title="Семьи с детьми">
       <h2 class="r-head">Семьи с&nbsp;детьми</h2>
+      <div class="r-ca-time" data-audience-time="families" aria-label="Время семей с детьми"></div>
+      <div class="r-ca-copy">
       <div class="r-ca-text">
-        <figure class="r-ca-photo"><img src="rsti/img/ca-semi-s-detmi.png" alt="Семья с ребёнком дома"></figure>
         <p class="r-k">профиль</p>
         <p class="r-ca-prof">30–45 лет, растят одного или двух детей. Доход выше среднего, чаще всего есть машина. Ищут спокойное место и&nbsp;всё необходимое для детей рядом.</p>
       </div>
@@ -1274,6 +1308,7 @@ html{ font-size: calc(100vw / 22.5); }
           <p class="r-p">МЖ от&nbsp;30</p>
         </div>
       </div>
+      </div>
     </section>
     <section class="slide r-visual" data-kicker="02 · аудитория" data-num="22 / 59" data-title="Визуалы — семьи с детьми">
       <h2 class="r-head">Визуалы для ЦА — семьи с детьми</h2>
@@ -1282,10 +1317,11 @@ html{ font-size: calc(100vw / 22.5); }
         <img src="rsti/img/audience-0911/slide-6-2.png" alt="Рекламный визуал для семей с детьми 2">
       </div>
     </section>
-    <section class="slide r-ca r-ca-expanded" data-kicker="02 · аудитория" data-num="23 / 59" data-title="Зрелые пары с взрослыми детьми">
+    <section class="slide r-ca r-ca-timed" data-kicker="02 · аудитория" data-num="23 / 59" data-title="Зрелые пары с взрослыми детьми">
       <h2 class="r-head">Зрелые пары с&nbsp;взрослыми детьми</h2>
+      <div class="r-ca-time" data-audience-time="mature" aria-label="Время зрелых пар"></div>
+      <div class="r-ca-copy">
       <div class="r-ca-text">
-        <figure class="r-ca-photo"><img src="rsti/img/ca-zrelye-pary.png" alt="Пара старшего возраста дома"></figure>
         <p class="r-k">профиль</p>
         <p class="r-ca-prof">Семейная пара 46–55&nbsp;лет, с&nbsp;детьми разных возрастов.<br>Доход высокий, занимают должность топ-менеджера или имеют свой бизнес.<br>Жители СПб и&nbsp;ЛО.<br>55+, дети выросли и&nbsp;живут отдельно. Продают прежнюю квартиру и&nbsp;переезжают в&nbsp;новую, часто с&nbsp;доплатой. Есть автомобиль, важны тишина, здоровье и&nbsp;комфорт.</p>
       </div>
@@ -1304,6 +1340,7 @@ html{ font-size: calc(100vw / 22.5); }
           <p class="r-k">летний период</p>
           <p class="r-p">Дача</p>
         </div>
+      </div>
       </div>
     </section>
     <section class="slide r-visual" data-kicker="02 · аудитория" data-num="24 / 59" data-title="Визуалы — зрелые пары с детьми">
@@ -1980,6 +2017,83 @@ html{ font-size: calc(100vw / 22.5); }
   let was = false;
   const sync = () => { const now = slide.classList.contains('on'); if (now && !was) { on(0); draw(); } was = now; };
   document.addEventListener('deck:slide', sync); sync();
+})();
+</script><script>
+(() => {
+  const commonChannels = 'MAX и ТГ-каналы, VK, РСЯ, карты';
+  const directChannels = 'Яндекс Директ (РСЯ по интересам и тесты / Бренд, базы недвижимости, ИИ-ассистент, VK, карты)';
+  const family = [
+    [7, 10, 'Домашние дела, отвести ребёнка в сад/школу. Личные дела', '—'],
+    [10, 12, 'Работа / личное время / домашние дела', 'РСЯ по интересам и тесты / Бренд, базы недвижимости, ИИ-ассистент, VK, карты'],
+    [12, 13, 'Обед', '—'],
+    [14, 18, 'Работа / серфинг интернета / личные дела', commonChannels + ', Яндекс Директ'],
+    [18, 20, 'Домашние дела, забрать ребёнка из сада/школы', commonChannels],
+    [20, 23, 'Личное время. Серфинг интернета', directChannels]
+  ];
+  const mature = [
+    [8, 10, 'Дорога на работу или подготовка к работе дома / домашние дела', commonChannels],
+    [10, 12, 'Работа', '—'],
+    [12, 13, 'Обед, личное время, гаджеты', 'VK, РСЯ'],
+    [14, 18, 'Работа', '—'],
+    [18, 20, 'Дорога домой / домашние дела', commonChannels],
+    [20, 23, 'Личное время. Серфинг интернета, встречи с друзьями', directChannels]
+  ];
+  const NS = 'http://www.w3.org/2000/svg';
+  const node = (tag, attrs, parent, text) => {
+    const n = document.createElementNS(NS, tag);
+    Object.entries(attrs).forEach(([key, value]) => n.setAttribute(key, value));
+    if (text !== undefined) n.textContent = text;
+    parent.appendChild(n); return n;
+  };
+  const point = (h, radius) => {
+    const angle = h / 24 * Math.PI * 2;
+    return [radius * Math.sin(angle), -radius * Math.cos(angle)];
+  };
+  const arc = (a, b) => {
+    const p = point(a, 40), q = point(b, 40), r = point(b, 26), s = point(a, 26), big = b - a > 12 ? 1 : 0;
+    return `M${p}A40 40 0 ${big} 1 ${q}L${r}A26 26 0 ${big} 0 ${s}Z`;
+  };
+  const time = (h) => String(h % 24).padStart(2, '0') + ':00';
+  document.querySelectorAll('[data-audience-time]').forEach((box) => {
+    const isMature = box.dataset.audienceTime === 'mature', start = isMature ? 8 : 7;
+    const data = [...(isMature ? mature : family), [23, 24 + start, 'Сон', 'С 23:00 — сон'], [13, 14, 'Время не указано', 'В исходнике нет описания интервала 13:00–14:00']];
+    const ring = document.createElement('div'); ring.className = 'at-ring'; box.appendChild(ring);
+    const svg = node('svg', { viewBox: '-49 -49 98 98', role: 'group', 'aria-label': 'Распорядок дня — 24 часа' }, ring);
+    const paths = data.map(([a, b, label], i) => {
+      const path = node('path', { d: arc(a, b), class: 'at-sector at-tone-' + i, tabindex: 0, role: 'button', 'aria-pressed': 'false', 'aria-label': `${time(a)}–${time(b)}. ${label}`, 'data-index': i }, svg);
+      node('title', {}, path, `${time(a)}–${time(b)} · ${b - a} ч · ${label}`); return path;
+    });
+    for (let h = 0; h < 24; h += 3) {
+      const [x, y] = point(h, 46);
+      node('text', { x, y, class: 'at-hour', 'text-anchor': 'middle', 'dominant-baseline': 'central' }, svg, String(h).padStart(2, '0'));
+    }
+    const title = node('text', { x: 0, y: -7, class: 'at-center-label', 'text-anchor': 'middle' }, svg, 'График внимания');
+    const center = node('text', { x: 0, y: 2, class: 'at-center-value', 'text-anchor': 'middle' }, svg, '24 часа');
+    const duration = node('text', { x: 0, y: 10, class: 'at-center-label', 'text-anchor': 'middle' }, svg, 'в сутках');
+    const caption = document.createElement('p'); caption.className = 'at-caption'; caption.textContent = 'С 23:00 — сон. 13:00–14:00 — не указано в исходнике.'; ring.appendChild(caption);
+    const list = document.createElement('div'); list.className = 'at-list'; box.appendChild(list);
+    const rows = data.map(([a, b, label, channels], i) => {
+      const row = document.createElement('button'); row.type = 'button'; row.className = 'at-row'; row.dataset.index = i; row.setAttribute('aria-pressed', 'false');
+      const heading = document.createElement('span'); heading.className = 'at-time'; heading.textContent = `${time(a)}–${time(b)}`;
+      const activity = document.createElement('span'); activity.className = 'at-activity'; activity.textContent = label;
+      const media = document.createElement('span'); media.className = 'at-channels'; media.textContent = channels;
+      row.append(heading, activity, media); list.appendChild(row); return row;
+    });
+    const choose = (i) => {
+      paths.forEach((p, j) => { p.classList.toggle('is-active', j === i); p.setAttribute('aria-pressed', String(j === i)); });
+      rows.forEach((r, j) => { r.classList.toggle('is-active', j === i); r.setAttribute('aria-pressed', String(j === i)); });
+      const [a, b] = data[i]; title.textContent = i === 6 ? 'Сон' : i === 7 ? 'Нет данных' : 'График внимания';
+      center.textContent = `${time(a)}–${time(b)}`; duration.textContent = `${b - a} ч в сутки`;
+      box.dataset.active = String(i);
+    };
+    [...paths, ...rows].forEach((n) => {
+      const select = () => choose(Number(n.dataset.index));
+      n.addEventListener('mouseenter', select); n.addEventListener('focus', select); n.addEventListener('click', select);
+      if (n.namespaceURI === NS) n.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); select(); }
+      });
+    });
+  });
 })();
 </script>
     <div class="kicker" id="kicker"></div>
